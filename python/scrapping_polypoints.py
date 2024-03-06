@@ -34,8 +34,8 @@ password=driver.find_element(By.NAME, "pass")
 login="logs.txt"
 with open(login, 'r') as fichier :
     lines=fichier.readlines()
-    username.send_keys(lines[0])
-    password.send_keys(lines[1])
+    id=lines[0]
+    mdp=lines[1]
 """
 # partie où on demande de rentrer son identifiant et son mot de passe
 id=input("Entrez votre identifiant :")
