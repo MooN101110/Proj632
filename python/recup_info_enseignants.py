@@ -78,7 +78,7 @@ while not finished :
 
             # Ajouter les informations à la requête sql
             query += f"INSERT INTO INFO_enseignant (nom, prenom, mail) VALUES ('{nom}', '{prenom}','{email}');\n"
-            
+
     except Exception as e:
         print(f"Une exception s'est produite : {e}")
         
@@ -91,4 +91,5 @@ for i in query.split("\n"):
         print(i)
         print(execute_query(db, i))
 close_db(db)
+
 print("done")
