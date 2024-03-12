@@ -7,6 +7,8 @@ import random
 import chromedriver_autoinstaller
 import csv
 
+import lien_db
+
 url='https://www.polytech.univ-smb.fr/intranet/accueil.html'
 
 #Ouverture de la page web
@@ -60,6 +62,7 @@ for link in liens:
 
 #Parcours de chaque page pour récupérer les infos
 data=[]
+data_csv=[]
 
 for i in range (len(liens_module)):
     soup =bs(driver.page_source, "lxml")
@@ -72,16 +75,21 @@ for i in range (len(liens_module)):
     info_module=[div.get_text(strip=True) for div in recup_info]
     entete=[div.get_text(strip=True) for div in recup_entete]
     
-    #Mise en forme des données
-    data.append(["Code","Matière"])
+    #Mise en forme des données pour csv
+    data_csv.append(["Code","Matière"])
     for elt in (entete):
-        data[i*2].append(elt)
+        data_csv[i*2].append(elt)
+    data_csv.append([code_module[i].get_text()[9:-11],liens_module[i][0]])
+    for elt in (info_module):
+        data_csv[i*2+1].append(elt)
+    
+    #Mise en forme des données pour bd
     data.append([code_module[i].get_text()[9:-11],liens_module[i][0]])
     for elt in (info_module):
-        data[i*2+1].append(elt)
+        data[i].append(elt)
         
     #Temps de pause pour éviter la detection du scraping
-    time.sleep(random.randrange(1,5))
+    time.sleep(random.randrange(2,5))
 
 driver.close()
 
@@ -90,4 +98,14 @@ with open("../data/modules.csv", "wt+", newline="") as f:
     writer = csv.writer(f,delimiter=';')
     for row in data:
         writer.writerow(row)
+   
+#Sauvegarde des données dans la bd
+bd=lien_db.get_db("logs_db.txt")
+for elt in (data):
+    query= f"INSERT INTO INFO_module (code_module,nom,id_semestre,id_discipline) VALUES ('{elt[0]}','{elt[1]}','{elt[2][1:]}',(SELECT id_discipline FROM INFO_discipline WHERE nom LIKE '{elt[0][:-3]}'))"
+    lien_db.execute_query(bd,query)
+    print (query)
+    
+print(lien_db.get_data(bd,"INFO_module"))
+lien_db.close_db(bd)
 
