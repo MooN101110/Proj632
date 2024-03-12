@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import time
+import random 
 import chromedriver_autoinstaller
 import csv
 
@@ -25,7 +26,7 @@ username=driver.find_element(By.ID,'user')
 password=driver.find_element(By.NAME,'pass')
 
 #Récuperation information 
-file=open('login.txt', "r")
+file=open('logs.txt', "r")
 lines=file.readlines()
 
 username.send_keys(lines[0])
@@ -58,7 +59,6 @@ for link in liens:
         liens_module.append([link.get_text(), "https://www.polytech.univ-smb.fr"+link["href"]])
 
 #Parcours de chaque page pour récupérer les infos
-
 data=[]
 
 for i in range (len(liens_module)):
@@ -79,12 +79,15 @@ for i in range (len(liens_module)):
     data.append([code_module[i].get_text()[9:-11],liens_module[i][0]])
     for elt in (info_module):
         data[i*2+1].append(elt)
+        
+    #Temps de pause pour éviter la detection du scraping
+    time.sleep(random.randrange(1,5))
 
+driver.close()
 
 # Sauvegarde des données
-with open("info.csv", "wt+", newline="") as f:
+with open("../data/modules.csv", "wt+", newline="") as f:
     writer = csv.writer(f,delimiter=';')
     for row in data:
         writer.writerow(row)
 
-driver.close()
