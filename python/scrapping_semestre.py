@@ -6,6 +6,8 @@ import time
 import chromedriver_autoinstaller
 import csv
 
+import lien_db
+
 url='https://www.polytech.univ-smb.fr/intranet/accueil.html'
 
 #Ouverture de la page web
@@ -45,16 +47,29 @@ soup= bs(driver.page_source, 'html.parser')
 
 #Récupération des semestres
 recup_semestre=soup.find('select',id="semestre")
-semestres_csv=[]
+#semestres_csv=[]
+semestres=[]
 for elt in (recup_semestre):
     if elt!='\n':  #enlever les \n collés aux noms des disciplines
         if elt.get_text()!='---':  #e,elevr les premier elt qui n'est pas une discipline (ne peut pas être fait avec un if and)
-            semestres_csv.append([elt.get_text()])
-            
-#Sauvegarde des données en csv
-with open("semestres.csv", "wt+", newline="") as f:
-    writer = csv.writer(f,delimiter=',')
-    for row in semestres_csv:
-        writer.writerow(row)
-print(semestres_csv)
+            #semestres_csv.append([elt.get_text()])
+            semestres.append(elt.get_text())
+ 
+driver.close()
+           
+# #Sauvegarde des données en csv
+# with open("semestres.csv", "wt+", newline="") as f:
+#     writer = csv.writer(f,delimiter=',')
+#     for row in semestres_csv:
+#         writer.writerow(row)
+# print(semestres_csv)
+
+#Sauvegarde des données dans la bd
+bd=lien_db.get_db("logs_db.txt")
+for elt in (semestres):
+    query= f"INSERT INTO INFO_semestre (id_semestre) VALUES ('{elt}')"
+    lien_db.execute_query(bd,query)
+
+print(lien_db.get_data(bd,"INFO_semestre"))
+lien_db.close_db(bd)
             
