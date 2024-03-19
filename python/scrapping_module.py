@@ -6,9 +6,9 @@ import time
 import random 
 import chromedriver_autoinstaller
 import csv
-
+import json
 import lien_db
-
+    
 url='https://www.polytech.univ-smb.fr/intranet/accueil.html'
 
 #Ouverture de la page web
@@ -61,9 +61,10 @@ for link in liens:
         liens_module.append([link.get_text(), "https://www.polytech.univ-smb.fr"+link["href"]])
 
 #Parcours de chaque page pour récupérer les infos
-data=[]
+data={}
 data_csv=[]
 
+entete_ok=['Code','Matiere','Semestre','UE','Responsable','Mel','Nb heures TD','Nb heures Cours','Nb heures TP','Nb heures de Travail Personnel Planifi\u00e9','Nb heures de Travail Personnel Planifié']
 for i in range (len(liens_module)):
     soup =bs(driver.page_source, "lxml")
     driver.get(liens_module[i][1])
@@ -84,27 +85,41 @@ for i in range (len(liens_module)):
         data_csv[i*2+1].append(elt)
     
     #Mise en forme des données pour bd
-    data.append([code_module[i].get_text()[9:-11],liens_module[i][0]])
-    for elt in (info_module):
-        data[i].append(elt)
-        
+    data[f"'{i}'"]={'Code':code_module[i].get_text()[9:-11],'Matiere':liens_module[i][0]}
+    for j in range (min(len(info_module),len(entete))):
+        if entete[j] in entete_ok and info_module[j]!="":
+            data[f"'{i}'"][entete[j]]=info_module[j]
     #Temps de pause pour éviter la detection du scraping
-    time.sleep(random.randrange(2,5))
+    #time.sleep(random.randrange(2,5))
 
 driver.close()
 
-# Sauvegarde des données
+# Sauvegarde des données en csv
 with open("../data/modules.csv", "wt+", newline="") as f:
     writer = csv.writer(f,delimiter=';')
-    for row in data:
+    for row in data_csv:
         writer.writerow(row)
+        
+#Sauvegarde des données en json
+with open("../data/modules.json", "w",encoding='utf8') as f:
+    json.dump(data, f,indent=4,ensure_ascii=False)
    
 #Sauvegarde des données dans la bd
 bd=lien_db.get_db("logs_db.txt")
-for elt in (data):
-    query= f"INSERT INTO INFO_module (code_module,nom,id_semestre,id_discipline) VALUES ('{elt[0]}','{elt[1]}','{elt[2][1:]}',(SELECT id_discipline FROM INFO_discipline WHERE nom LIKE '{elt[0][:-3]}'))"
-    lien_db.execute_query(bd,query)
-    print (query)
+for i in range (len(data)):
+    key = f"'{i}'"
+    print(data[key].keys())
+    query= f"INSERT INTO INFO_module (code_module,nom,id_semestre,id_discipline) VALUES ('{data[key]['Code']}','{data[key]['Matiere']}','{data[key]['Semestre'][1:]}',(SELECT id_discipline FROM INFO_discipline WHERE nom LIKE '{data[key]['Code'][:-3]}%'))"
+    print(lien_db.execute_query(bd,query))
+    if "Nb heures Cours" in (data[key].keys()):
+        query=f"UPDATE INFO_module SET hCM={data[key]['Nb heures Cours']} WHERE code_module LIKE '{data[key]['Code']}'"
+        lien_db.execute_query(bd,query)
+    if "Nb heures TD" in (data[key].keys()):
+        query=f"UPDATE INFO_module SET hTD={data[key]['Nb heures TD']} WHERE code_module LIKE '{data[key]['Code']}'"
+        lien_db.execute_query(bd,query)
+    if "Nb heures TP" in (data[key].keys()):
+        query=f"UPDATE INFO_module SET hTP={data[key]['Nb heures TP']} WHERE code_module LIKE '{data[key]['Code']}'"
+        lien_db.execute_query(bd,query)
     
 print(lien_db.get_data(bd,"INFO_module"))
 lien_db.close_db(bd)

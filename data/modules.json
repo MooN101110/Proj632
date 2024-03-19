@@ -1,0 +1,663 @@
+{
+    "'0'": {
+        "Code": "LANG500",
+        "Matiere": "Soutien Anglais",
+        "Semestre": "S5",
+        "UE": "UE501 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "12",
+        "Nb heures de Travail Personnel Planifié": "12"
+    },
+    "'1'": {
+        "Code": "LANG501",
+        "Matiere": "Anglais",
+        "Semestre": "S5",
+        "UE": "UE501 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "40.5"
+    },
+    "'2'": {
+        "Code": "SHES501",
+        "Matiere": "Sport",
+        "Semestre": "S5",
+        "UE": "UE501 : Passerelle vers le milieu professionnel",
+        "Responsable": "Jean-Baptiste Evrot et Françoise Ducoeur",
+        "Mel": "Jean-Baptiste.Evrot@univ-smb.fr, francoise.ducoeur@univ-smb.fr",
+        "Nb heures TD": "21"
+    },
+    "'3'": {
+        "Code": "SHES505",
+        "Matiere": "Simulation de gestion d'entreprise",
+        "Semestre": "S5",
+        "UE": "UE501 : Passerelle vers le milieu professionnel",
+        "Responsable": "Elodie Gardet",
+        "Mel": "Elodie.Gardet@univ-smb.fr",
+        "Nb heures TD": "19.5"
+    },
+    "'4'": {
+        "Code": "DDRS501",
+        "Matiere": "Développement Durable",
+        "Semestre": "S5",
+        "UE": "UE502 : Sciences et outils de l'Ingénieur",
+        "Responsable": "Hervé Boileau",
+        "Mel": "Herve.Boileau@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TD": "9"
+    },
+    "'5'": {
+        "Code": "EASI501",
+        "Matiere": "Electricité",
+        "Semestre": "S5",
+        "UE": "UE502 : Sciences et outils de l'Ingénieur",
+        "Responsable": "François Leplus ; Christelle Kempf -Coco",
+        "Mel": "francois.leplus@univ-smb.fr ; Christelle.Kempf-Coco@univ-smb.fr",
+        "Nb heures Cours": "13.5",
+        "Nb heures TD": "15",
+        "Nb heures TP": "12"
+    },
+    "'6'": {
+        "Code": "INFO501",
+        "Matiere": "Algorithmique et programmation",
+        "Semestre": "S5",
+        "UE": "UE502 : Sciences et outils de l'Ingénieur",
+        "Responsable": "Ammar Mian",
+        "Mel": "Ammar.Mian@univ-smb.fr",
+        "Nb heures Cours": "10.5",
+        "Nb heures TD": "10.5",
+        "Nb heures TP": "16"
+    },
+    "'7'": {
+        "Code": "INFO502",
+        "Matiere": "Bases de données",
+        "Semestre": "S5",
+        "UE": "UE502 : Sciences et outils de l'Ingénieur",
+        "Responsable": "Flavien Vernier",
+        "Mel": "Flavien.Vernier@univ-smb.fr",
+        "Nb heures Cours": "6",
+        "Nb heures TD": "4.5",
+        "Nb heures TP": "12"
+    },
+    "'8'": {
+        "Code": "MATH500",
+        "Matiere": "Remise à niveau Mathématiques",
+        "Semestre": "S5",
+        "UE": "UE502 : Sciences et outils de l'Ingénieur",
+        "Responsable": "Adeline Berthier, Catherine Adloff",
+        "Mel": "catherine.adloff@univ-smb.fr",
+        "Nb heures TD": "21"
+    },
+    "'9'": {
+        "Code": "MATH501",
+        "Matiere": "Mathématiques",
+        "Semestre": "S5",
+        "UE": "UE502 : Sciences et outils de l'Ingénieur",
+        "Responsable": "Adeline Berthier, Catherine Adloff",
+        "Mel": "Catherine.Adloff@univ-smb.fr",
+        "Nb heures Cours": "21",
+        "Nb heures TD": "19.5"
+    },
+    "'10'": {
+        "Code": "EASI541a",
+        "Matiere": "Automatisation",
+        "Semestre": "S5",
+        "UE": "UE503 : Sciences de l'ingénieur IDU1",
+        "Responsable": "Stéphane Marteau",
+        "Mel": "stephane.marteau@univ-smb.fr",
+        "Nb heures Cours": "6",
+        "Nb heures TD": "13.5",
+        "Nb heures TP": "20"
+    },
+    "'11'": {
+        "Code": "ISOC531",
+        "Matiere": "Sociétés numériques",
+        "Semestre": "S5",
+        "UE": "UE503 : Sciences de l'ingénieur IDU1",
+        "Responsable": "Kavé Salamatian",
+        "Mel": "Kave.Salamatian@univ-smb.fr",
+        "Nb heures Cours": "13.5",
+        "Nb heures TD": "22.5",
+        "Nb heures TP": "4"
+    },
+    "'12'": {
+        "Code": "MATH531",
+        "Matiere": "Graphes et Langages",
+        "Semestre": "S5",
+        "UE": "UE503 : Sciences de l'ingénieur IDU1",
+        "Responsable": "Flavien Vernier",
+        "Mel": "Flavien.Vernier@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TD": "12",
+        "Nb heures TP": "16"
+    },
+    "'13'": {
+        "Code": "PROJ531",
+        "Matiere": "Gestion de projets",
+        "Semestre": "S5",
+        "UE": "UE503 : Sciences de l'ingénieur IDU1",
+        "Responsable": "Ilham Alloui",
+        "Mel": "Ilham.Alloui@univ-smb.fr",
+        "Nb heures Cours": "6",
+        "Nb heures TD": "6",
+        "Nb heures TP": "28"
+    },
+    "'14'": {
+        "Code": "LANG600",
+        "Matiere": "Soutien : Anglais",
+        "Semestre": "S6",
+        "UE": "UE601 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat, Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr, Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "12",
+        "Nb heures de Travail Personnel Planifié": "12"
+    },
+    "'15'": {
+        "Code": "LANG601",
+        "Matiere": "Anglais",
+        "Semestre": "S6",
+        "UE": "UE601 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel.Yvenat, Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-savoie.fr , Christophe.Lambert@univ-savoie.fr",
+        "Nb heures TD": "40.5"
+    },
+    "'16'": {
+        "Code": "PROJ601",
+        "Matiere": "Stage Découverte du milieu professionnel",
+        "Semestre": "S6",
+        "UE": "UE601 : Passerelle vers le milieu professionnel",
+        "Responsable": "Michel Ondarts ; Sebastien Monnet ; Fabien Formosa; Philippe Saffre",
+        "Mel": "Michel.Ondarts@univ-smb.fr ; Sebastien.Monnet@univ-smb.fr ; Fabien.Formosa@univ-smb.fr ; Philippe.Saffre@univ-smb.fr"
+    },
+    "'17'": {
+        "Code": "SHES601",
+        "Matiere": "Gestion financière",
+        "Semestre": "S6",
+        "UE": "UE601 : Passerelle vers le milieu professionnel",
+        "Responsable": "Elodie Gardet",
+        "Mel": "Elodie.Gardet@univ-smb.fr",
+        "Nb heures Cours": "10.5",
+        "Nb heures TD": "9"
+    },
+    "'18'": {
+        "Code": "SHES602",
+        "Matiere": "Initiation au droit",
+        "Semestre": "S6",
+        "UE": "UE601 : Passerelle vers le milieu professionnel",
+        "Responsable": "Elodie GARDET",
+        "Mel": "Elodie.Gardet@univ-smb.fr",
+        "Nb heures Cours": "15",
+        "Nb heures TD": "4.5"
+    },
+    "'19'": {
+        "Code": "INFO631",
+        "Matiere": "Logique et Programmation",
+        "Semestre": "S6",
+        "UE": "UE602 : Mathématiques et Algorithmique",
+        "Responsable": "Flavien Vernier",
+        "Mel": "flavien.vernier@univ-smb.fr",
+        "Nb heures Cours": "10.5",
+        "Nb heures TD": "10.5",
+        "Nb heures TP": "20"
+    },
+    "'20'": {
+        "Code": "MATH641a",
+        "Matiere": "Mathématiques",
+        "Semestre": "S6",
+        "UE": "UE602 : Mathématiques et Algorithmique",
+        "Responsable": "Alexandre Bascop",
+        "Mel": "alexandre.bascop@univ-smb.fr",
+        "Nb heures Cours": "18",
+        "Nb heures TD": "18"
+    },
+    "'21'": {
+        "Code": "PROJ631",
+        "Matiere": "Projet Algorithmique",
+        "Semestre": "S6",
+        "UE": "UE602 : Mathématiques et Algorithmique",
+        "Responsable": "Sylvie Galichet",
+        "Mel": "Sylvie.Galichet@univ-smb.fr",
+        "Nb heures TD": "42"
+    },
+    "'22'": {
+        "Code": "INFO633",
+        "Matiere": "APP - Bases de données et technologies web",
+        "Semestre": "S6",
+        "UE": "UE603 : Informatique et Conception",
+        "Responsable": "Lionel Valet",
+        "Mel": "Lionel. Valet@univ-smb.fr",
+        "Nb heures Cours": "8.5",
+        "Nb heures TD": "7.5",
+        "Nb heures TP": "20"
+    },
+    "'23'": {
+        "Code": "INFO641a",
+        "Matiere": "Conception et Programmation orientée objet",
+        "Semestre": "S6",
+        "UE": "UE603 : Informatique et Conception",
+        "Responsable": "Sorana CIMPAN",
+        "Mel": "Sorana.Cimpan@univ-smb.fr",
+        "Nb heures Cours": "9",
+        "Nb heures TD": "9",
+        "Nb heures TP": "20"
+    },
+    "'24'": {
+        "Code": "INFO632",
+        "Matiere": "Systèmes d’exploitation et Virtualisation",
+        "Semestre": "S6",
+        "UE": "UE604 : Environnement et applications",
+        "Responsable": "Sébastien Monnet",
+        "Mel": "sebastien.monnet@univ-smb.fr",
+        "Nb heures Cours": "10.5",
+        "Nb heures TD": "13.5",
+        "Nb heures TP": "16"
+    },
+    "'25'": {
+        "Code": "ISOC631",
+        "Matiere": "Plateformes collaboratives",
+        "Semestre": "S6",
+        "UE": "UE604 : Environnement et applications",
+        "Responsable": "Kavé Salamatian",
+        "Mel": "Kave.Salamatian@univ-smb.fr",
+        "Nb heures Cours": "13.5",
+        "Nb heures TD": "15",
+        "Nb heures TP": "12"
+    },
+    "'26'": {
+        "Code": "PROJ632",
+        "Matiere": "Projet Data Science",
+        "Semestre": "S6",
+        "UE": "UE604 : Environnement et applications",
+        "Responsable": "Marc Philipe Huget",
+        "Mel": "Marc-Philippe.Huget@univ-smb.fr",
+        "Nb heures TD": "30"
+    },
+    "'27'": {
+        "Code": "LANG700",
+        "Matiere": "Soutien : Anglais",
+        "Semestre": "S7",
+        "UE": "UE701 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "6",
+        "Nb heures de Travail Personnel Planifié": "6"
+    },
+    "'28'": {
+        "Code": "LANG701",
+        "Matiere": "Anglais (Niveau B2 non atteint)",
+        "Semestre": "S7",
+        "UE": "UE701 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "40.5"
+    },
+    "'29'": {
+        "Code": "LANG702",
+        "Matiere": "Langues vivantes (Niveau B2)",
+        "Semestre": "S7",
+        "UE": "UE701 : Passerelle vers le milieu professionnel",
+        "Responsable": "Hugues Favrelière et Christophe Lambert",
+        "Mel": "Hugues.Favreliere@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "35"
+    },
+    "'30'": {
+        "Code": "SHES703",
+        "Matiere": "Ressources et dynamique professionnelle",
+        "Semestre": "S7",
+        "UE": "UE701 : Passerelle vers le milieu professionnel",
+        "Responsable": "Carole Mislin",
+        "Mel": "Carole.Mislin@univ-smb.fr",
+        "Nb heures TD": "15",
+        "Nb heures TP": "4"
+    },
+    "'31'": {
+        "Code": "SHES704",
+        "Matiere": "Créativité et Management de l'innovation",
+        "Semestre": "S7",
+        "UE": "UE701 : Passerelle vers le milieu professionnel",
+        "Responsable": "Elodie GARDET",
+        "Mel": "elodie.gardet@univ-smb.fr",
+        "Nb heures TD": "25.5"
+    },
+    "'32'": {
+        "Code": "DATA731",
+        "Matiere": "Modélisation Stochastique",
+        "Semestre": "S7",
+        "UE": "UE702 : Mathématiques et Données",
+        "Responsable": "Abdourrahmane Atto",
+        "Mel": "Abdourrahmane.Atto@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TP": "24"
+    },
+    "'33'": {
+        "Code": "INFO731",
+        "Matiere": "Sécurité et Cryptographie",
+        "Semestre": "S7",
+        "UE": "UE702 : Mathématiques et Données",
+        "Responsable": "Kave Salamatian",
+        "Mel": "Kave.Salamatian@univ-smb.fr",
+        "Nb heures Cours": "13.5",
+        "Nb heures TD": "22.5",
+        "Nb heures TP": "4"
+    },
+    "'34'": {
+        "Code": "MATH741a",
+        "Matiere": "Probabilités et statistiques",
+        "Semestre": "S7",
+        "UE": "UE702 : Mathématiques et Données",
+        "Responsable": "Alexandre Bascop",
+        "Mel": "Alexandre.Bascop@univ-smb.fr",
+        "Nb heures Cours": "18",
+        "Nb heures TD": "18"
+    },
+    "'35'": {
+        "Code": "INFO732",
+        "Matiere": "Comportement et Modélisation Dynamique",
+        "Semestre": "S7",
+        "UE": "UE703 : Informatique et Conception",
+        "Responsable": "Sorana Cimpan",
+        "Mel": "Sorana.Cimpan@univ-smb.fr",
+        "Nb heures Cours": "7.5",
+        "Nb heures TD": "6",
+        "Nb heures TP": "24"
+    },
+    "'36'": {
+        "Code": "INFO743a",
+        "Matiere": "Réseaux et systèmes répartis",
+        "Semestre": "S7",
+        "UE": "UE703 : Informatique et Conception",
+        "Responsable": "Kave Salamatian",
+        "Mel": "Kave.Salamatian@univ-smb.fr",
+        "Nb heures Cours": "18",
+        "Nb heures TD": "16",
+        "Nb heures TP": "4"
+    },
+    "'37'": {
+        "Code": "PROJ731",
+        "Matiere": "Flux de Données et Accès Concurrents",
+        "Semestre": "S7",
+        "UE": "UE703 : Informatique et Conception",
+        "Responsable": "Sebastien Monnet",
+        "Mel": "Sebastien.Monnet@univ-smb.fr",
+        "Nb heures Cours": "2",
+        "Nb heures TD": "4",
+        "Nb heures TP": "16"
+    },
+    "'38'": {
+        "Code": "DATA732",
+        "Matiere": "Analyse et visualisation de données",
+        "Semestre": "S7",
+        "UE": "UE704 : Visualisation et gouvernance",
+        "Responsable": "Sorana Cimpan",
+        "Mel": "Sorana.Cimpan@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TD": "23.5"
+    },
+    "'39'": {
+        "Code": "INFO734",
+        "Matiere": "Développement Full Stack",
+        "Semestre": "S7",
+        "UE": "UE704 : Visualisation et gouvernance",
+        "Responsable": "Marc-Philippe HUGET",
+        "Mel": "Marc-Philippe.Huget@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TD": "24"
+    },
+    "'40'": {
+        "Code": "ISOC731",
+        "Matiere": "Économie et gouvernance de la donnée",
+        "Semestre": "S7",
+        "UE": "UE704 : Visualisation et gouvernance",
+        "Responsable": "Kavé Salamatian",
+        "Mel": "Kave.Salamatian@univ-smb.fr",
+        "Nb heures Cours": "15",
+        "Nb heures TD": "21",
+        "Nb heures TP": "4"
+    },
+    "'41'": {
+        "Code": "LANG800",
+        "Matiere": "Soutien : Anglais",
+        "Semestre": "S8",
+        "UE": "UE801 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "6",
+        "Nb heures de Travail Personnel Planifié": "6"
+    },
+    "'42'": {
+        "Code": "LANG801",
+        "Matiere": "Anglais (Niveau B2 non atteint)",
+        "Semestre": "S8",
+        "UE": "UE801 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "40.5"
+    },
+    "'43'": {
+        "Code": "LANG802",
+        "Matiere": "Langues vivantes (Niveau B2)",
+        "Semestre": "S8",
+        "UE": "UE801 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel.Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "35"
+    },
+    "'44'": {
+        "Code": "SHES802",
+        "Matiere": "Système de Management Intégré QSE (Qualité Sécurité Environnement)",
+        "Semestre": "S8",
+        "UE": "UE801 : Passerelle vers le milieu professionnel",
+        "Responsable": "Michel Ambert, Pierre Alain Pignolet",
+        "Mel": "michel.ambert@univ-smb.fr, pierrealain.pignolet@free.fr",
+        "Nb heures Cours": "9",
+        "Nb heures TD": "10.5"
+    },
+    "'45'": {
+        "Code": "SHES803",
+        "Matiere": "Théorie des organisations",
+        "Semestre": "S8",
+        "UE": "UE801 : Passerelle vers le milieu professionnel",
+        "Responsable": "Elodie Gardet",
+        "Mel": "Elodie.Gardet@univ-smb.fr",
+        "Nb heures Cours": "9",
+        "Nb heures TD": "9"
+    },
+    "'46'": {
+        "Code": "PROJ801",
+        "Matiere": "Stage Assistant ingénieur",
+        "Semestre": "S8",
+        "UE": "UE802 : Stage",
+        "Responsable": "Michel ONDARTS ; Sébastien MONNET ; Fabien Formosa ; Philippe Saffré",
+        "Mel": "Michel.Ondarts@univ-smb.fr ; Sebastien.Monnet@univ-smb.fr ; Fabien.Formosa@univ-smb.fr ; Philippe.Saffre@univ-smb.fr"
+    },
+    "'47'": {
+        "Code": "DATA831",
+        "Matiere": "Big Data",
+        "Semestre": "S8",
+        "UE": "UE803 : Données et Aide à la Décision",
+        "Responsable": "Marc-Philippe Huget",
+        "Mel": "Marc-Philippe.Huget@univ-smb.fr",
+        "Nb heures Cours": "7.5",
+        "Nb heures TP": "12"
+    },
+    "'48'": {
+        "Code": "DATA832",
+        "Matiere": "Machine Learning",
+        "Semestre": "S8",
+        "UE": "UE803 : Données et Aide à la Décision",
+        "Responsable": "Alexandre Benoit",
+        "Mel": "alexandre.benoit@univ-smb.fr",
+        "Nb heures Cours": "9",
+        "Nb heures TD": "9",
+        "Nb heures TP": "12"
+    },
+    "'49'": {
+        "Code": "INFO831",
+        "Matiere": "Informatique décisionnelle",
+        "Semestre": "S8",
+        "UE": "UE803 : Données et Aide à la Décision",
+        "Responsable": "Abdourrahmane ATTO",
+        "Mel": "Abdourrahmane.Atto@univ-smb.fr",
+        "Nb heures Cours": "9",
+        "Nb heures TD": "9",
+        "Nb heures TP": "12"
+    },
+    "'50'": {
+        "Code": "PROJ831",
+        "Matiere": "Projet Informatique Données et Usages",
+        "Semestre": "S8",
+        "UE": "UE803 : Données et Aide à la Décision",
+        "Responsable": "Marc-Philippe Huget",
+        "Mel": "Marc-Philippe.Huget@univ-smb.fr",
+        "Nb heures Cours": "4.5",
+        "Nb heures TD": "36"
+    },
+    "'51'": {
+        "Code": "INFO832",
+        "Matiere": "Qualité et tests logiciel",
+        "Semestre": "S8",
+        "UE": "UE804 : Informatique et Conception",
+        "Responsable": "Flavien Vernier",
+        "Mel": "Flavien.Vernier@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TD": "12",
+        "Nb heures TP": "16"
+    },
+    "'52'": {
+        "Code": "INFO833",
+        "Matiere": "Systèmes distribués à large échelle",
+        "Semestre": "S8",
+        "UE": "UE804 : Informatique et Conception",
+        "Responsable": "Sebastien Monnet",
+        "Mel": "Sebastien.Monnet@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TD": "13.5",
+        "Nb heures TP": "15"
+    },
+    "'53'": {
+        "Code": "INFO834",
+        "Matiere": "Bases de données distribuées",
+        "Semestre": "S8",
+        "UE": "UE804 : Informatique et Conception",
+        "Responsable": "Ilham Alloui",
+        "Mel": "Ilham.Alloui@univ-smb.fr",
+        "Nb heures Cours": "7.5",
+        "Nb heures TD": "7.5",
+        "Nb heures TP": "24"
+    },
+    "'54'": {
+        "Code": "ISOC831",
+        "Matiere": "Dimension métiers",
+        "Semestre": "S8",
+        "UE": "UE804 : Informatique et Conception",
+        "Responsable": "Sylvie Galichet",
+        "Mel": "Sylvie.Galichet@univ-smb.fr",
+        "Nb heures Cours": "30"
+    },
+    "'55'": {
+        "Code": "LANG901",
+        "Matiere": "Anglais (Niveau TOEIC non atteint)",
+        "Semestre": "S9",
+        "UE": "UE901 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "40.5"
+    },
+    "'56'": {
+        "Code": "LANG902",
+        "Matiere": "Langues (Niveau TOEIC atteint)",
+        "Semestre": "S9",
+        "UE": "UE901 : Passerelle vers le milieu professionnel",
+        "Responsable": "Muriel Yvenat et Christophe Lambert",
+        "Mel": "Muriel.Yvenat@univ-smb.fr et Christophe.Lambert@univ-smb.fr",
+        "Nb heures TD": "35"
+    },
+    "'57'": {
+        "Code": "PROJ901",
+        "Matiere": "Projet Recherche et Développement",
+        "Semestre": "S9",
+        "UE": "UE901 : Passerelle vers le milieu professionnel",
+        "Responsable": "Marx Chhay ; Guillaume Ginolhac ; Emile Roux ; Philippe Saffre",
+        "Mel": "Marx.Chhay@univ-smb.fr ; Guillaume.Ginolhac@univ-smb.fr ; Emile.Roux@univ-smb.fr ; Philippe.Saffre@univ-smb.fr",
+        "Nb heures TP": "40"
+    },
+    "'58'": {
+        "Code": "SHES901",
+        "Matiere": "Techniques de management",
+        "Semestre": "S9",
+        "UE": "UE901 : Passerelle vers le milieu professionnel",
+        "Responsable": "Elodie GARDET - Muriel Schriver",
+        "Mel": "murielschriver@gmail.com",
+        "Nb heures Cours": "15",
+        "Nb heures TD": "7.5"
+    },
+    "'59'": {
+        "Code": "INFO931",
+        "Matiere": "Optimisation et aide à la décision multicritère",
+        "Semestre": "S9",
+        "UE": "UE902 : Optimisation et HPC",
+        "Responsable": "Sylvie Galichet/Sébastien Monnet",
+        "Mel": "Sylvie.Galichet@univ-smb.fr et Sebastien.Monnet@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TD": "12",
+        "Nb heures TP": "16"
+    },
+    "'60'": {
+        "Code": "INFO932",
+        "Matiere": "Calcul haute performance et Cloud Computing",
+        "Semestre": "S9",
+        "UE": "UE902 : Optimisation et HPC",
+        "Responsable": "Sébastien Monnet",
+        "Mel": "Sebastien.Monnet@univ-smb.fr",
+        "Nb heures Cours": "7.5",
+        "Nb heures TD": "7.5",
+        "Nb heures TP": "24"
+    },
+    "'61'": {
+        "Code": "PROJ931",
+        "Matiere": "Projet Usages",
+        "Semestre": "S9",
+        "UE": "UE902 : Optimisation et HPC",
+        "Responsable": "Entreprise",
+        "Nb heures TP": "40"
+    },
+    "'62'": {
+        "Code": "DATA931",
+        "Matiere": "Machine Learning ",
+        "Semestre": "S9",
+        "UE": "UE903 : Données et Aide à la Décision II",
+        "Responsable": "Alexandre Benoit",
+        "Mel": "alexandre.benoit@univ-smb.fr",
+        "Nb heures Cours": "12",
+        "Nb heures TD": "12",
+        "Nb heures TP": "16"
+    },
+    "'63'": {
+        "Code": "ISOC931",
+        "Matiere": "Innovation et Recherche ",
+        "Semestre": "S9",
+        "UE": "UE903 : Données et Aide à la Décision II",
+        "Responsable": "Alexandre Benoit",
+        "Mel": "alexandre.benoit@univ-smb.fr",
+        "Nb heures Cours": "6",
+        "Nb heures TD": "12",
+        "Nb heures TP": "20"
+    },
+    "'64'": {
+        "Code": "PROJ932",
+        "Matiere": "Projet Data Science",
+        "Semestre": "S9",
+        "UE": "UE903 : Données et Aide à la Décision II",
+        "Responsable": "Marc-Philippe Huget",
+        "Mel": "Marc-Philippe.Huget@univ-smb.fr",
+        "Nb heures TP": "40"
+    },
+    "'65'": {
+        "Code": "PROJ001",
+        "Matiere": "Stage Ingénieur",
+        "Semestre": "S10",
+        "UE": "UE001 : Stage Ingénieur",
+        "Responsable": "Michel ONDARTS ; Sébastien MONNET ; Eric Pairel ; Philippe Saffré",
+        "Mel": "Michel.Ondarts@univ-smb.fr ; Sebastien.Monnet@univ-smb.fr ; Eric.Pairel@univ-smb.fr ; Philippe.Saffre@univ-smb.fr"
+    }
+}
