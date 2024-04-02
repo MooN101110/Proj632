@@ -1,5 +1,7 @@
 python/logs_db.txt
 python/logs.txt
+logs_db.txt
+logs.txt
 data/infos_eleve.txt
 data/polypoints.csv
 data/disciplines.csv
