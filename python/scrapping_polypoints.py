@@ -14,6 +14,8 @@ from bs4 import BeautifulSoup as bs
 from selenium.webdriver.common.by import By
 import time
 
+import lien_db
+
 chromedriver_autoinstaller.install()
 driver=webdriver.Chrome()
 
@@ -71,6 +73,7 @@ for point in polypoints :
         # quand on a pas les informations liées aux polypoints, on ne fait rien
         pass
 
+"""
 # on enregistre ensuite chaque information dans un fichier csv dans le dossier data
     chemin_python=os.path.dirname(__file__) # on récupère le chemin du fichier actuel
     chemin_relatif=os.path.join(chemin_python, "..") # on remonte d'un niveau
@@ -83,4 +86,19 @@ for point in polypoints :
         writer.writerow(['Intitulé', 'Tâche', 'Nombre de points', 'Année'])
         for info in informations :
             writer.writerow(info)
+"""
+driver.close()
+
+# enregistrement dans la base de donnée
+bd=lien_db.get_db("logs_db.txt")
+for info in informations:
+    intitule=info[0]
+    tache=info[1]
+    nb_points=info[2]
+    annee=info[3]
+    query= f"INSERT INTO INFO_polypoint (intitule, tache, nb_points, annee, id_etudiant) VALUES ('{intitule}', '{tache}', '{nb_points}', '{annee}', '{id}');"
+    lien_db.execute_query(bd,query)
+
+print(lien_db.get_data(bd,"INFO_polypoint"))
+lien_db.close_db(bd)
         
