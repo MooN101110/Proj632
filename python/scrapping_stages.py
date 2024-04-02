@@ -63,11 +63,10 @@ for point in polypoints :
 # grâce au print, on a vu que la class "value" contenait les polypoints et les stages effectués. 
 # il faut donc générer une exception quand on a pas les intitulés de classes qu'on recherche 
     try :
-        intitule=point.find('li', class_='intitule').text
-        tache=point.find('li', class_='intitule_tache').text
-        nb_points=point.find('li', class_='nb_points').text
-        annee=point.find('li', class_='annee').text
-        informations.append([intitule, tache,  nb_points, annee])
+        annee=point.find('li', class_='annee_convention').text
+        entreprise=point.find('li', class_='entreprise').text
+        date=point.find('li', class_='date').text
+        informations.append([annee, entreprise, date])
 
     except:
         # quand on a pas les informations liées aux polypoints, on ne fait rien
@@ -79,26 +78,26 @@ for point in polypoints :
     chemin_relatif=os.path.join(chemin_python, "..") # on remonte d'un niveau
     chemin_projet=os.path.abspath(chemin_relatif) # on converti le chemin relatif en chemin absolu
     chemin_data=os.path.join(chemin_projet, "data")
-    fichier="polypoints.csv"
+    fichier="stages.csv"
     enregistrement=os.path.join(chemin_data, fichier)
     with open(enregistrement, "wt+", encoding="utf-8", newline="") as fichier :
         writer=csv.writer(fichier)
-        writer.writerow(['Intitulé', 'Tâche', 'Nombre de points', 'Année'])
+        writer.writerow(['Année', 'Entreprise', 'Date'])
         for info in informations :
             writer.writerow(info)
 """
+
 driver.close()
 
 # enregistrement dans la base de donnée
 bd=lien_db.get_db("logs_db.txt")
 for info in informations:
-    intitule=info[0]
-    tache=info[1]
-    nb_points=info[2]
-    annee=info[3]
-    query= f"INSERT INTO INFO_polypoint (intitule, tache, nb_points, annee, id_etudiant) VALUES ('{intitule}', '{tache}', '{nb_points}', '{annee}', '{id}');"
-    lien_db.execute_query(bd,query)
+    annee=info[0]
+    entreprise=info[1]
+    date=info[2]
+    query= f"INSERT INTO INFO_stage (annee, entreprise, date, id_etudiant) VALUES ('{annee}', '{entreprise}', '{date}', '{id}');"
+    print(query)
+    print(lien_db.execute_query(bd,query))
 
-print(lien_db.get_data(bd,"INFO_polypoint"))
+print(lien_db.get_data(bd,"INFO_stage"))
 lien_db.close_db(bd)
-        
