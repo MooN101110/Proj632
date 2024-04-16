@@ -4,7 +4,6 @@
 """
 
 ### import des bibliothèques ###
-import csv
 import getpass
 import os
 import chromedriver_autoinstaller
