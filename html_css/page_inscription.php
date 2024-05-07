@@ -17,4 +17,5 @@ if( isset( $_POST["inscription_ok"])){
         mysqli_select_db($conn, "learnagement"); 
         mysqli_query($conn, "SET NAMES UTF8");
         echo"azerty";
+}
 ?>
