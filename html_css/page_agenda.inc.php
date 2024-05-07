@@ -1,3 +1,10 @@
+
+<style>
+<?php include 'page_agenda.inc.css';
+ ?>
+</style>
+
+
 <?php
 // Définir la date actuelle
 $date = date('Y-m-d');
