@@ -8,13 +8,15 @@
 </head>
 
 <?php 
-    $conn = @mysqli_connect("tp-epua:3308", "camasl", "2z1m2ta5");
-    if (mysqli_connect_errno()){
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    } else {
-        mysqli_select_db($conn, "camasl");
-        mysqli_query($conn, "SET NAMES UTF8");
-    }
+$logs = file("logs.txt");
+$conn = @mysqli_connect("tp-epua:3308", substr($logs[0],0,-2), $logs[1]);
+if (mysqli_connect_errno()){
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+} 
+else {
+    mysqli_select_db($conn, substr($logs[0],0,-2));
+    mysqli_query($conn, "SET NAMES UTF8");
+}
 ?>
 
 <body>
