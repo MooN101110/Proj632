@@ -1,3 +1,11 @@
+<<<<<<< Updated upstream
+=======
+logs_db.txt
+*.txt
+evenement_cal.json
+evenement.csv
+file.ical
+>>>>>>> Stashed changes
 python/logs_db.txt
 python/logs.txt
 logs_db.txt
