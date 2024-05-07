@@ -25,17 +25,43 @@
         }
         echo "</ul></div>";
 
-        /* Afficher la liste des rendus qu'un élèves a à faire*/
-        echo "<h2>Liste des rendus qu'un élèves a à faire </h2> ";
-        $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus` JOIN INFO_module m ON module LIKE m.code_module ORDER BY date ASC";
+        if (isset($_POST['checkbox']) && is_array($_POST['checkbox'])) {
+            foreach ($_POST['checkbox'] as $selectedCheckbox) {
+                $case=$selectedCheckbox;
+                echo "La case ".$case;
+                $sql="UPDATE INFO_rendus_eleves SET etat='ON' WHERE id_rendu =". $case . ";";
+                $result=mysqli_query($conn, $sql) ; // on envoie la requête dans la base de donnée
+                if($result){
+                    echo "Le travail a bien été rendu";
+                }
+            }   
+        }
+
+        $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON module LIKE m.code_module WHERE etat='OFF' ORDER BY date ASC";
         $result=mysqli_query($conn, $sql) or die ("Problème lors de la connexion");
 
-        echo "<form> ";
+        echo "<form method='post'> ";
+        $i=0;
         while ($row=mysqli_fetch_array($result)) {
-            echo "<input type='checkbox' id='choix' name='choix1' value='choix1'>
-            <label for='choix1'>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ."</label><br>";
+            echo "<input type='checkbox' name='checkbox[]' value=".$i." class='non-rendus'>
+            <label for='choix".$i."'>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ."</label><br>";
+            $i+=1;
+            $module=$row['nom'];
         }
+        $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON module LIKE m.code_module WHERE etat='ON' ORDER BY date ASC";
+        $result=mysqli_query($conn, $sql) or die ("Problème lors de la connexion");
+
+        echo "<form method='post'> ";
+        $i=0;
+        while ($row=mysqli_fetch_array($result)) {
+            echo "<input type='checkbox' name='checkbox[]' value=".$i." class='rendu'>
+            <label for='choix".$i."'>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ."</label><br>";
+            $i+=1;
+            $module=$row['nom'];
+        }
+        echo "<button type='submit'>Valider les éléments finis</button>";
         echo "</form>";
+
 
 
         /* Permettre à un enseignants de rajouter un rendus*/
