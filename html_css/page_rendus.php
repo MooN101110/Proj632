@@ -4,25 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="" />  
   
-  <?php   
-        $id_login="rechonre";
-      /*Connexion à la base de données sur le serveur tp-epua*/
-		$conn = @mysqli_connect("tp-epua:3308", "rechonre", "aHuMsl6q");    
-		
-		/*connexion à la base de donnée depuis la machine virtuelle INFO642*/
-		/*$conn = @mysqli_connect("localhost", "etu", "bdtw2021");*/  
-
-		if (mysqli_connect_errno()) {
-            $msg = "erreur ". mysqli_connect_error();
-        } else {  
-            $msg = "connecté au serveur " . mysqli_get_host_info($conn);
-            /*Sélection de la base de données*/
-            mysqli_select_db($conn, "rechonre"); 
-            /*mysqli_select_db($conn, "etu"); */ /*sélection de la base sous la VM info642*/
-		
-            /*Encodage UTF8 pour les échanges avecla BD*/
-            mysqli_query($conn, "SET NAMES UTF8");
-        }
+    <?php 
+    $logs = file("../logs.txt");
+    $conn = @mysqli_connect("tp-epua:3308", substr($logs[0],0,-2), substr($logs[1],0,-2));
+    if (mysqli_connect_errno()){
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    } else {
+        mysqli_select_db($conn, substr($logs[0],0,-2));
+        mysqli_query($conn, "SET NAMES UTF8");
+    }
 
         /* Afficher la liste des rendus qu'un enseignant a rentré*/
         echo "<h2>Liste des rendus qu'un enseignant à rentré </h2> ";
