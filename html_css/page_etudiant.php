@@ -14,12 +14,9 @@ $logs = file("../logs.txt");
 /* fin de la connexion à la base de données*/
 
 /* Lancement du fichier de scraping des informations de l'étudiant */
-/*$pythonScript='scraping_polypoint_stage.py';
-$output = array();
-$return_var = 0;
-exec('python ' . $pythonScript, $output, $return_var);
-echo "Sortie du script Python : " . implode("\n", $output) . "\n";
-echo "Valeur de retour : " . $return_var . "\n"; */
+/*$pythonScript='../python/scraping_polypoint_stage.py';
+$output=shell_exec('python ' . $pythonScript);
+ */
 
 $sql="SELECT nom, prenom FROM INFO_utilisateur u WHERE u.identifiant='".$id_login."'"; //id_login : correspond au login entrée par la personne dans la page de connexion
 $result=mysqli_query($conn, $sql);
