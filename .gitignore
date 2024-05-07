@@ -1,3 +1,8 @@
+logs_db.txt
+logs.txt
+evenement_cal.json
+evenement.csv
+file.ical
 python/logs_db.txt
 python/logs.txt
 data/infos_eleve.txt
@@ -5,3 +10,4 @@ data/polypoints.csv
 data/disciplines.csv
 data/modules.csv
 data/modules.json
+html_css/logs.txt
