@@ -20,3 +20,5 @@
 ?>
 
 <p>Bienvenu</p>
+
+<a href="page_ressources.php" class="btn_ressources" >Ressources</a>
