@@ -1,6 +1,6 @@
 <?php
-// id_login défini pour les test, il faudra qu'il soit récupérer depuis la page de connexion
-$id_login="";
+// id_login est récupéré dans l'url 
+$id_login=$_GET["login"];
 
 /*Connexion à la base de données sur le serveur tp-epua*/
 $logs = file("../logs.txt");
