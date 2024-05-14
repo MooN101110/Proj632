@@ -1,17 +1,6 @@
 <?php
 // id_login est récupéré dans l'url 
-$id_login=$_GET["login"];
-
-/*Connexion à la base de données sur le serveur tp-epua*/
-$logs = file("../logs.txt");
-    $conn = @mysqli_connect("tp-epua:3308", substr($logs[0],0,-2), substr($logs[1],0,-2));
-    if (mysqli_connect_errno()){
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    } else {
-        mysqli_select_db($conn, substr($logs[0],0,-2));
-        mysqli_query($conn, "SET NAMES UTF8");
-    }
-/* fin de la connexion à la base de données*/
+$id_login=$_GET["id"];
 
 /* Lancement du fichier de scraping des informations de l'étudiant */
 /*$pythonScript='../python/scraping_polypoint_stage.py';
@@ -26,7 +15,7 @@ echo "<h2> Page étudiante - ".$row['nom']." ".$row['prenom']." </h2>";
 
 //Menu pour les étudiants
 echo "<ul id='menu'>";
-echo "<li><a href='page_rendus.php' class='btn_rendus' >Rendus</a></li>";
+echo "<li><a href='?page=accueil&id=camasl&section=rendus' class='btn_rendus' >Rendus</a></li>";
 echo "</ul>";
 
 //Partie sur les polypoints

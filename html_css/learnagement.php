@@ -20,7 +20,13 @@
 ?>
 
 <body>
-    
+    <div id="contenu">
+    <?php
+    if(!isset($_GET["page"]) ) { 
+        $page="connexion";
+    } else {
+        $page=$_GET["page"];
+    }
 
     <div id="contenue">
             <?php
