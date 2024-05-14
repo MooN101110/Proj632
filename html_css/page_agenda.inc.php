@@ -51,7 +51,6 @@ for ($i = 0; $i < $nb_creneaux; $i++) {
 echo '</table>';
 ?>
 
-<script>
-    <?php include 'page_agenda.inc.js';
-    ?>
+<script type="text/javascript">
+    <?php include 'page_agenda.inc.js'; ?>
 </script>
