@@ -27,7 +27,7 @@
     } else {
         $page=$_GET["page"];
     }
-
+    ?>
     <div id="contenue">
             <?php
             if(!isset($_GET["page"]) ) { 
