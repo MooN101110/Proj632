@@ -24,7 +24,7 @@ echo "<select name='annee' id='form'>";
 echo "</select>";
 echo "<input type='hidden' name='valider' value='true'>"; // Ajout de la variable cachée pour indiquer que le formulaire a été soumis
 echo "<button id=bouton type='valider'>Valider</button>";
-echo "<input type='submit' name=bouton_retour value='Retour' >";
+echo "<a href='?page=liste_personnel' class='bouton_retour'>Retour</a>";
 echo "</form>";
 
 // Affichage de la liste
@@ -70,9 +70,5 @@ else {
         echo "<li>".$row['etu_nom']." ".$row['etu_prenom']." " .$row['etu_annee']." " .$row['etu_filiere']."</li>"; 
     }
 } 
-
-if (isset($_POST['bouton_retour'])){
-    // bouton retour à page_liste_personnel.inc.php à faire
-}
 
 ?>

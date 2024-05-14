@@ -5,8 +5,9 @@ echo "<p> Liste des professeurs : </p>";
 echo "<form method='post' action='?page=liste_prof'>";
 echo "<input type='text' name='query' placeholder='Entrez une recherche'>";
 echo "<input type='submit' name=bouton_recherche value='Rechercher'>";
-echo "<input type='submit' name=bouton_retour value='Retour' >";
+echo "<a href='?page=liste_personnel' class='bouton_retour'>Retour</a>";
 echo "</form>";
+
 
 // Affichage de la liste
 // si y'a une recherche spéficique 
@@ -32,10 +33,5 @@ else{
         echo "<li>".$row['prof_nom']." ".$row['prof_prenom']." " .$row['prof_mail']."</li>";   
         }
     }
-
-if (isset($_POST['bouton_retour'])){
-   // bouton retour à page_liste_personnel.inc.php à faire
-}
-
 
 ?>
