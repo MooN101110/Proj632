@@ -1,10 +1,23 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+logs_db.txt
+*.txt
+evenement_cal.json
+evenement.csv
+file.ical
+>>>>>>> Stashed changes
+=======
 logs_db.txt
 logs.txt
 evenement_cal.json
 evenement.csv
 file.ical
+>>>>>>> main
 python/logs_db.txt
 python/logs.txt
+logs_db.txt
+logs.txt
 data/infos_eleve.txt
 data/polypoints.csv
 data/disciplines.csv
