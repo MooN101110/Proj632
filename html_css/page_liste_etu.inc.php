@@ -39,7 +39,7 @@ if (isset($_POST['valider'])) {
         $sql="SELECT prenom as etu_prenom, nom as etu_nom, filiere as etu_filiere FROM INFO_etudiant WHERE annee='{$annee}'";
         $result=mysqli_query($conn, $sql);
         while ($row=mysqli_fetch_array($result)){ 
-            echo "<li>".$row['etu_nom']." ".$row['etu_prenom']." ".$row['etu_filiere']." </li>"; 
+            echo "<div>".$row['etu_nom']." ".$row['etu_prenom']." ".$row['etu_filiere']." </div>"; 
             }
         
     }
@@ -51,7 +51,7 @@ if (isset($_POST['valider'])) {
         $sql="SELECT prenom as etu_prenom, nom as etu_nom, annee as etu_annee FROM INFO_etudiant WHERE filiere='{$filiere}'";
         $result=mysqli_query($conn, $sql);
         while ($row=mysqli_fetch_array($result)){ 
-            echo "<li>".$row['etu_nom']." ".$row['etu_prenom']." ".$row['etu_annee']." </li>"; 
+            echo "<div>".$row['etu_nom']." ".$row['etu_prenom']." ".$row['etu_annee']." </div>"; 
             }
         
     }
@@ -62,7 +62,7 @@ if (isset($_POST['valider'])) {
         if (mysqli_num_rows($result)>0) {
             echo "<p>Elèves de ".$filiere." en ".$annee." : </p>";
             while ($row=mysqli_fetch_array($result)){ 
-                echo "<li>".$row['etu_nom']." ".$row['etu_prenom']."</li>"; 
+                echo "<div>".$row['etu_nom']." ".$row['etu_prenom']."</div>"; 
                 }
             }
         else{
@@ -78,7 +78,7 @@ else {
     $sql="SELECT prenom as etu_prenom, nom as etu_nom, annee as etu_annee, filiere as etu_filiere FROM INFO_etudiant";
     $result=mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_array($result)){ 
-        echo "<li>".$row['etu_nom']." ".$row['etu_prenom']." " .$row['etu_annee']." " .$row['etu_filiere']."</li>"; 
+        echo "<div>".$row['etu_nom']." ".$row['etu_prenom']." " .$row['etu_annee']." " .$row['etu_filiere']."</div>"; 
     }
 } 
 
