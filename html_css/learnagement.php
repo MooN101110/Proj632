@@ -9,15 +9,14 @@
 </head>
 
 <?php 
-$logs = file("logs.txt");
-$conn = @mysqli_connect("tp-epua:3308", substr($logs[0],0,-2), $logs[1]);
-if (mysqli_connect_errno()){
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-} 
-else {
-    mysqli_select_db($conn, substr($logs[0],0,-2));
-    mysqli_query($conn, "SET NAMES UTF8");
-}
+    $logs = file("../logs.txt");
+    $conn = @mysqli_connect("tp-epua:3308", substr($logs[0],0,-2), substr($logs[1],0,-2));
+    if (mysqli_connect_errno()){
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    } else {
+        mysqli_select_db($conn, substr($logs[0],0,-2));
+        mysqli_query($conn, "SET NAMES UTF8");
+    }
 ?>
 
 <body>

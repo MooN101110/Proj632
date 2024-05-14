@@ -19,7 +19,6 @@ import lien_db
 chromedriver_autoinstaller.install()
 driver=webdriver.Chrome()
 
-
 # définition de l'url à scrapper
 url_connexion="https://www.polytech.univ-smb.fr/intranet/accueil.html"
 driver.get(url_connexion)
@@ -41,7 +40,7 @@ with open(login, 'r') as fichier :
 """
 # partie où on demande de rentrer son identifiant et son mot de passe
 id=input("Entrez votre identifiant :")
-mdp=getpass.getpass("Entrer votre mot de passe (l'affichage est caché): ")
+mdp=getpass.getpass("Entrez votre mot de passe (l'affichage est caché): ")
 
 # on envoie les identifiants et mots de passe dans la page
 username.send_keys(id)
@@ -56,48 +55,64 @@ url="https://www.polytech.univ-smb.fr/intranet/pages-speciales/espace-etudiants/
 driver.get(url)
 html=driver.page_source
 soup=bs(html, "lxml")
-polypoints=soup.find_all('div', class_='value')
-#print(polypoints)
-informations=[]
-for point in polypoints :
+valeurs=soup.find_all('div', class_='value')
+
+# scraping des polypoints
+informations_polypoint=[]
+for point in valeurs :
+# grâce au print, on a vu que la class "value" contenait les polypoints et les stages effectués. 
+# il faut donc générer une exception quand on a pas les intitulés de classes qu'on recherche 
+    try :
+        intitule=point.find('li', class_='intitule').text
+        tache=point.find('li', class_='intitule_tache').text
+        nb_points=point.find('li', class_='nb_points').text
+        annee=point.find('li', class_='annee').text
+        informations_polypoint.append([intitule, tache,  nb_points, annee])
+
+    except:
+        # quand on a pas les informations liées aux polypoints, on ne fait rien
+        pass
+
+# scraping des stages
+informations_stage=[]
+for point in valeurs :
 # grâce au print, on a vu que la class "value" contenait les polypoints et les stages effectués. 
 # il faut donc générer une exception quand on a pas les intitulés de classes qu'on recherche 
     try :
         annee=point.find('li', class_='annee_convention').text
         entreprise=point.find('li', class_='entreprise').text
         date=point.find('li', class_='date').text
-        informations.append([annee, entreprise, date])
+        informations_stage.append([annee, entreprise, date])
 
     except:
         # quand on a pas les informations liées aux polypoints, on ne fait rien
         pass
 
-"""
-# on enregistre ensuite chaque information dans un fichier csv dans le dossier data
-    chemin_python=os.path.dirname(__file__) # on récupère le chemin du fichier actuel
-    chemin_relatif=os.path.join(chemin_python, "..") # on remonte d'un niveau
-    chemin_projet=os.path.abspath(chemin_relatif) # on converti le chemin relatif en chemin absolu
-    chemin_data=os.path.join(chemin_projet, "data")
-    fichier="stages.csv"
-    enregistrement=os.path.join(chemin_data, fichier)
-    with open(enregistrement, "wt+", encoding="utf-8", newline="") as fichier :
-        writer=csv.writer(fichier)
-        writer.writerow(['Année', 'Entreprise', 'Date'])
-        for info in informations :
-            writer.writerow(info)
-"""
+
 
 driver.close()
-
-# enregistrement dans la base de donnée
+# enregistrement des informations dans la base de donnée
 bd=lien_db.get_db("logs_db.txt")
-for info in informations:
+#enregistrement des polypoints
+for info in informations_polypoint:
+    intitule=info[0]
+    tache=info[1]
+    nb_points=info[2]
+    annee=info[3]
+    query= f"INSERT INTO INFO_polypoint (intitule, tache, nb_points, annee, id_etudiant) SELECT '{intitule}', '{tache}', '{nb_points}', '{annee}', '{id}' WHERE NOT EXISTS( SELECT 1 FROM INFO_polypoint WHERE intitule='{intitule}' AND tache='{tache}' AND nb_points='{nb_points}' AND annee='{annee}' AND id_etudiant='{id}' );"
+    lien_db.execute_query(bd,query)
+
+print(lien_db.get_data(bd,"INFO_polypoint"))
+
+#enregistrement des stages
+for info in informations_stage:
     annee=info[0]
     entreprise=info[1]
     date=info[2]
-    query= f"INSERT INTO INFO_stage (annee, entreprise, date, id_etudiant) VALUES ('{annee}', '{entreprise}', '{date}', '{id}');"
-    print(query)
-    print(lien_db.execute_query(bd,query))
+    query= f"INSERT INTO INFO_stage (annee, entreprise, date, id_etudiant) SELECT '{annee}', '{entreprise}', '{date}', '{id}' WHERE NOT EXISTS( SELECT 1 FROM INFO_stage WHERE annee='{annee}' AND entreprise='{entreprise}' AND date='{date}' AND id_etudiant='{id}');"
+    #print(query)
+    #print(lien_db.execute_query(bd,query))
 
 print(lien_db.get_data(bd,"INFO_stage"))
+
 lien_db.close_db(bd)
