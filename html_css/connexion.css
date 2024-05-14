@@ -2,12 +2,10 @@
 
 #principal{
     justify-content: center;   
-    font-family:'Eurostile T medium*';
-    margin: auto;
-    margin-top: auto;
+    font-family:'Verdana';
     height: 75vh;
     width: 49vw;
-    border-radius: 15px;
+   
 }
 
 #requete{
@@ -17,11 +15,12 @@
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    
     flex-direction: column;
-    /*border-bottom-left-radius: 15px; /* Coin supérieur gauche arrondi */
-   /* border-bottom-right-radius: 15px;*/
     border-radius: 15px; 
+    margin-left: 25vw;
+    margin-top: 12vh;
+
 }
 
 .container{
@@ -32,10 +31,39 @@
 }
 
 #hautpage{
-    background-color: rgb(91, 100, 155);
+    background-color: rgb(11, 20, 74);
     height: 10vh;
     width: 100vw;
-    border-top-left-radius: 15px; /* Coin supérieur gauche arrondi */
-    border-top-right-radius: 15px;
+    
+}
+
+#textprincipal{
+    color:rgb(11, 20, 74);
+    
+}
+
+.logo {
+    max-height: 70px;
+    margin-left: 1vw;
 
 }
+
+.champRecherche{
+    margin-top: 2vh;
+    width: 40vw;
+    border-radius:7px ;
+
+}
+
+#bouton{
+    background-color: rgb(11, 20, 74);
+    width: 15vw;
+    color:white;
+    border-radius:7px ;
+    font-family:inherit;
+    height: 3vh;
+    margin-top: 2vh;
+    
+}
+
+
