@@ -23,12 +23,7 @@
 
 }
 
-.container{
-    /* position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%); */
-}
+
 
 #hautpage{
     background-color: rgb(11, 20, 74);
@@ -39,6 +34,7 @@
 
 #textprincipal{
     color:rgb(11, 20, 74);
+    margin-left: 1vw;
     
 }
 
