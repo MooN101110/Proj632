@@ -1,0 +1,17 @@
+#infos_enseignant h2 {
+    padding: 10px;
+    color: midnightblue
+}
+#infos_enseignant {
+    justify-content: left;
+    margin-left: 2%;
+    line-height: 150%;
+    align-items: left;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 20px;
+}
