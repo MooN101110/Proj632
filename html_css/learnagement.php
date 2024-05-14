@@ -19,9 +19,6 @@
 ?>
 
 <body>
-    <div id="entete">
-        <h1>Learnagement</h1>
-    </div>
     <div id="contenu">
     <?php
     if(!isset($_GET["page"]) ) { 
