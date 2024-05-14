@@ -4,6 +4,10 @@
  ?>
 </style>
 
+<script>
+    <?php include 'page_agenda.inc.js';
+    ?>
+</script>
 
 <?php
 // Définir la date actuelle
