@@ -5,6 +5,7 @@
     <title>Learnagement</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="learnagment.css">
 </head>
 
 <?php 
@@ -19,9 +20,6 @@
 ?>
 
 <body>
-    <div id="entete">
-        <h1>Learnagement</h1>
-    </div>
     <div id="contenu">
     <?php
     if(!isset($_GET["page"]) ) { 
@@ -30,15 +28,25 @@
         $page=$_GET["page"];
     }
 
-    if (file_exists("page_".$page.".inc.php")){
-        include("page_".$page.".inc.php");
-    }
-    else{
-        echo "Page non trouvée";
-    }
-    ?>
+    <div id="contenue">
+            <?php
+            if(!isset($_GET["page"]) ) { 
+                $page="connexion";
+            } else {
+                $page=$_GET["page"];
+            }
+
+            if (file_exists("page_".$page.".inc.php")){
+                include("page_".$page.".inc.php");
+            }
+            else{
+                echo "Page non trouvée";
+            }
+            ?>
+        
     </div>
-    <div id="pied">
-        <span> Polytech Annecy-Chambéry - APP - Learnagement</span>
-    </div>
+    <div id="piedpage">
+
+            <footer> Polytech Annecy-Chambéry - APP - Learnagement</footer>
+        </div>
 </body>

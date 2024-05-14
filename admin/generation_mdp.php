@@ -11,7 +11,7 @@
     <?php
 
         set_time_limit(300);
-        
+
         function motDePasse($longueur=8) { // 8 = longueur par défaut
             // chaine de caractères qui sera mis dans le désordre:
             $Chaine = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&$%-_!?";
@@ -67,16 +67,12 @@
             $sql = "SELECT nom,prenom from INFO_etudiant UNION SELECT nom,prenom from INFO_enseignant";
             $resultat = mysqli_query($conn, $sql) or die("Requête invalide: ". mysqli_error( $conn )."\n".$sql);
 
-
-            $sql = "INSERT INTO INFO_utilisateur(nom,prenom,identifiant,mot_de_passe,mdp_change) VALUES ";
-            echo $sql;
-            while($ligne = mysqli_fetch_array($resultat)){
-                $temp = "('". $ligne['nom']."','".$ligne['prenom']."','".identifiant($ligne['nom'],$ligne['prenom'])."','".password_hash(motDePasse(), PASSWORD_DEFAULT)."',0)";
-                $sql = $sql.$temp.",";
-                echo $temp.",";
+            $i=0;
+            while(($ligne = mysqli_fetch_array($resultat)) && ($i<300)){
+                $sql = "INSERT INTO INFO_utilisateur(nom,prenom,identifiant,mot_de_passe,mdp_change) VALUES ('".$ligne['nom']."','".$ligne['prenom']."','".identifiant($ligne['nom'],$ligne['prenom'])."','".password_hash(motDePasse(), PASSWORD_DEFAULT)."',0)";
+                $resultat1 = mysqli_query($conn, $sql) or die("Requête invalide: ". mysqli_error( $conn )."\n".$sql);
+                $i++;
             }
-            $sql = substr($sql,0,-1);
-            $resultat1 = mysqli_query($conn, $sql) or die("Requête invalide: ". mysqli_error( $conn )."\n".$sql);
 
         }
             
