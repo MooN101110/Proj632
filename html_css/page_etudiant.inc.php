@@ -1,6 +1,6 @@
 <?php
 // id_login est récupéré dans l'url 
-$id_login=$_GET["login"];
+$id_login=$_GET["id"];
 
 /* Lancement du fichier de scraping des informations de l'étudiant */
 /*$pythonScript='../python/scraping_polypoint_stage.py';
@@ -15,7 +15,7 @@ echo "<h2> Page étudiante - ".$row['nom']." ".$row['prenom']." </h2>";
 
 //Menu pour les étudiants
 echo "<ul id='menu'>";
-echo "<li><a href='page_rendus.php' class='btn_rendus' >Rendus</a></li>";
+echo "<li><a href='?page=accueil&id=camasl&section=rendus' class='btn_rendus' >Rendus</a></li>";
 echo "</ul>";
 
 //Partie sur les polypoints
