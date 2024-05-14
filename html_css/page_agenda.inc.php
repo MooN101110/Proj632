@@ -4,10 +4,6 @@
  ?>
 </style>
 
-<script>
-    <?php include 'page_agenda.inc.js';
-    ?>
-</script>
 
 <?php
 // Définir la date actuelle
@@ -45,7 +41,8 @@ for ($i = 0; $i < $nb_creneaux; $i++) {
         $annee = date('Y', strtotime($premier_jour . ' +' . $j . ' days'));
 
         // Afficher une case vide pour chaque créneau horaire
-        echo '<td>&nbsp;</td>';
+        echo '<td id="cell_' . str_pad($heure, 2, '0', STR_PAD_LEFT) . '_' . str_pad($minutes, 2, '0', STR_PAD_LEFT) . '_' . str_pad($jour, 2, '0', STR_PAD_LEFT) . '_' . $mois . '_' . $annee . '">&nbsp;</td>';
+
     }
 
     echo '</tr>';
@@ -53,3 +50,7 @@ for ($i = 0; $i < $nb_creneaux; $i++) {
 
 echo '</table>';
 ?>
+
+<script type="text/javascript">
+    <?php include 'page_agenda.inc.js'; ?>
+</script>

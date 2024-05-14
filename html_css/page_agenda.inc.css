@@ -1,4 +1,12 @@
-td, th {
-    width : 10px;
-    height: 5px;
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    height: 60px;
+    width: 14%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    vertical-align: top;
 }
