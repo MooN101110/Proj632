@@ -42,7 +42,7 @@
             else{
                 echo "Page non trouvée";
             }
-            ?>
+    ?>
         
     </div>
     <div id="piedpage">
