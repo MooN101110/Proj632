@@ -25,6 +25,7 @@ if (mysqli_num_rows($result) == 0) {
     echo "</div>";
     return;
 }
+echo "<a href='?page=liste_prof' class='bouton_retour'>Retour</a>";
 echo "<div id=infos_enseignant>";
 $row = mysqli_fetch_assoc($result);
 echo "<h2>&#128100;".$row["prenom"]." ".$row["nom"]."</h2>";
