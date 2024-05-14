@@ -31,21 +31,32 @@ echo "</form>";
 if (isset($_POST['valider'])) {
     $filiere=$_POST['filiere'];
     $annee=$_POST['annee'];
-    /*
+    
     // si on a pas de filiere :
-    if ($filiere="pas_filiere" && $annee!="pas_annee"){
+    if ($filiere=="pas_filiere" && $annee!="pas_annee"){
         //affichage des élèves en fonction de l'année selectionnée
-        echo "Elèves en ".$annee." : ";
+        echo "<p>Elèves en ".$annee." : </p> ";
+        $sql="SELECT prenom as etu_prenom, nom as etu_nom, filiere as etu_filiere FROM INFO_etudiant WHERE annee='{$annee}'";
+        $result=mysqli_query($conn, $sql);
+        while ($row=mysqli_fetch_array($result)){ 
+            echo "<li>".$row['etu_nom']." ".$row['etu_prenom']." ".$row['etu_filiere']." </li>"; 
+            }
+        
     }
 
     // si on a pas d'année :
-    elseif ($annee="pas_annee" && $filiere!="pas_filiere"){
+    elseif ($annee=="pas_annee" && $filiere!="pas_filiere"){
         //affichage des élèves en fonction de la filière selectionnée
-        print($filiere);
-        echo "Elèves de ".$filiere." : ";
-    }*/
+        echo "<p>Elèves de ".$filiere." : </p>";
+        $sql="SELECT prenom as etu_prenom, nom as etu_nom, annee as etu_annee FROM INFO_etudiant WHERE filiere='{$filiere}'";
+        $result=mysqli_query($conn, $sql);
+        while ($row=mysqli_fetch_array($result)){ 
+            echo "<li>".$row['etu_nom']." ".$row['etu_prenom']." ".$row['etu_annee']." </li>"; 
+            }
+        
+    }
 
-    /*else*/ if($annee!="pas_annee" && $filiere!="pas_filiere"){
+    elseif($annee!="pas_annee" && $filiere!="pas_filiere"){
         $sql="SELECT prenom as etu_prenom, nom as etu_nom FROM INFO_etudiant WHERE filiere='{$filiere}' AND annee='{$annee}'";
         $result=mysqli_query($conn, $sql);
         if (mysqli_num_rows($result)>0) {
