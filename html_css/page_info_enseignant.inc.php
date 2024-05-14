@@ -29,6 +29,6 @@ echo "<a href='?page=liste_prof' class='bouton_retour'>Retour</a>";
 echo "<div id=infos_enseignant>";
 $row = mysqli_fetch_assoc($result);
 echo "<h2>&#128100;".$row["prenom"]." ".$row["nom"]."</h2>";
-echo "<p>Mail : ".$row["mail"]."</p>";
+echo "<p>Mail : <a href='mailto:".$row['mail']."'>".$row['mail']."</a> </p>";
 echo "</div>";
 ?>
