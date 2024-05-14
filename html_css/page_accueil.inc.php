@@ -39,11 +39,9 @@
 ?>
 
 <body>
-    <div id="entete">
-        <h1>Learnagement</h1>
-    </div>
     <div id="container">
     <div id="menu">
+        <h1>Learnagement</h1>
         <ul id="lemenu">
             <li><a href="?page=accueil&id=camasl&section=agenda" class="btn_menu ">Agenda</a></li>
             <li><a href="?page=accueil&id=camasl&section=etudiant" class="btn_menu ">Mon Compte</a></li>
