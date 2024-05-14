@@ -1,0 +1,65 @@
+/*  POLICE */
+
+#principal{
+    justify-content: center;   
+    font-family:'Verdana';
+    height: 75vh;
+    width: 49vw;
+   
+}
+
+#requete{
+    background-color: rgb(228, 226, 226);
+    height: 55vh;
+    width: 49vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+    border-radius: 15px; 
+    margin-left: 25vw;
+    margin-top: 12vh;
+
+}
+
+
+
+#hautpage{
+    background-color: rgb(11, 20, 74);
+    height: 10vh;
+    width: 100vw;
+    
+}
+
+#textprincipal{
+    color:rgb(11, 20, 74);
+    margin-left: 1vw;
+    
+}
+
+.logo {
+    max-height: 70px;
+    margin-left: 1vw;
+
+}
+
+.champRecherche{
+    margin-top: 2vh;
+    width: 40vw;
+    border-radius:7px ;
+
+}
+
+#bouton{
+    background-color: rgb(11, 20, 74);
+    width: 15vw;
+    color:white;
+    border-radius:7px ;
+    font-family:inherit;
+    height: 3vh;
+    margin-top: 2vh;
+    
+}
+
+
