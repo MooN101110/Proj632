@@ -1,0 +1,41 @@
+/*  POLICE */
+
+#principal{
+    justify-content: center;   
+    font-family:'Eurostile T medium*';
+    margin: auto;
+    margin-top: auto;
+    height: 75vh;
+    width: 49vw;
+    border-radius: 15px;
+}
+
+#requete{
+    background-color: rgb(228, 226, 226);
+    height: 55vh;
+    width: 49vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*border-bottom-left-radius: 15px; /* Coin supérieur gauche arrondi */
+   /* border-bottom-right-radius: 15px;*/
+    border-radius: 15px; 
+}
+
+.container{
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%); */
+}
+
+#hautpage{
+    background-color: rgb(91, 100, 155);
+    height: 10vh;
+    width: 100vw;
+    border-top-left-radius: 15px; /* Coin supérieur gauche arrondi */
+    border-top-right-radius: 15px;
+
+}
