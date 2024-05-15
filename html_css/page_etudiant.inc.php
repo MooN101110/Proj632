@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="page_etudiant.inc.css"/>
+
 <?php
 // id_login est récupéré dans l'url 
 $id_login=$_GET["login"];
@@ -15,7 +17,7 @@ echo "<h2> Page étudiante - ".$row['nom']." ".$row['prenom']." </h2>";
 
 //Menu pour les étudiants
 echo "<ul id='menu'>";
-echo "<li><a href='?page=accueil&id=camasl&section=rendus' class='btn_rendus' >Rendus</a></li>";
+echo "<a href='?page=accueil&id=".$id_login."&section=rendus' class='bouton_rendu' >Rendus</a>";
 echo "</ul>";
 
 //Partie sur les polypoints
@@ -33,7 +35,7 @@ while($row = mysqli_fetch_array($result)){
         echo "<p id=polypoints_par_annee> Année ".$annee." : ".$somme." polypoints enregistrés </p>";
     }
     if($somme==1){
-        echo "<p id=polypoints_par_annee> Année ".$annee." : ".$somme." polypoint enregistré </p>";
+        echo "<p id=polypoint_par_annee> Année ".$annee." : ".$somme." polypoint enregistré </p>";
     }
 }
 
@@ -45,7 +47,7 @@ $result=mysqli_query($conn, $sql);
 //si on a des données associées à des polypoints :
 if ($row = mysqli_fetch_array($result)){
     echo "<table id='polypoints'>";
-    echo "<tr id=entete_polypoints>
+    echo "<tr id='entete_polypoints'>
             <th>Action</th>
             <th>Détail</th>
             <th>Nombre</th>
@@ -53,19 +55,19 @@ if ($row = mysqli_fetch_array($result)){
         </tr>";
     // insertions des données de polypoint dans un tableau
     do {
-        echo '<tr>';
-        echo '<td id="intitule_polypoints">'.$row['intitule'].'</td>';
-        echo '<td id="tache_polypoints">'.$row['tache'].'</td>';
-        echo '<td id="nb_polypoints">'.$row['nb_points'].'</td>';
-        echo '<td id="annee_polypoints">'.$row['annee'].'</td>';
-        echo '</tr>';
+        echo "<tr>";
+        echo "<td id='intitule_polypoints'>".$row['intitule']."</td>";
+        echo "<td id='tache_polypoints'>".$row['tache']."</td>";
+        echo "<td id='nb_polypoints'>".$row['nb_points']."</td>";
+        echo "<td id='annee_polypoints'>".$row['annee']."</td>";
+        echo "</tr>";
     }
     while ($row = mysqli_fetch_array($result)); // tant qu'on a une ligne de résultat
     echo "</table>";
 }
 // si on a pas de polypoints :
 else{
-    echo  "<p>Aucun polypoint enregistré. \nN'oubliez pas d'effectuer différentes actions dans l'année scolaire.</p>";
+    echo  "<p id='pas_donnee'>Aucun polypoint enregistré. \nN'oubliez pas d'effectuer différentes actions dans l'année scolaire.</p>";
 }
 
 
@@ -79,25 +81,25 @@ $result=mysqli_query($conn, $sql);
 // si on a déjà des stages d'enregistrés : 
 if ($row = mysqli_fetch_array($result)){
     echo "<table id='stages'>";
-    echo "<tr id=entete_stages>
+    echo "<tr id='entete_stages'>
             <th>Année </th>
             <th>Entreprise</th>
             <th>Dates</th>
         </tr>";
         // insertions des données de polypoint dans un tableau
         do{
-            echo '<tr>';
-            echo '<td id=annee_stage>'.$row['annee'].'</td>';
-            echo '<td id=entreprise_stage>'.$row['entreprise'].'</td>';
-            echo '<td id=date_stage>'.$row['date'].'</td>';
-            echo '</tr>';
+            echo "<tr>";
+            echo "<td id='annee_stage'>".$row['annee']."</td>";
+            echo "<td id='entreprise_stage'>".$row['entreprise']."</td>";
+            echo "<td id='date_stage'>".$row['date']."</td>";
+            echo "</tr>";
         }
         while ($row = mysqli_fetch_array($result)) ;// tant qu'on a une ligne de résultat
         echo "</table>";
 }
 // si on a pas de stages enregistrés :
 else{
-    echo  "<p>Aucun stage n'est connu du service. \nN'oubliez pas de faire vos demandes sur l'intranet.</p>";
+    echo  "<p id='pas_donnee'>Aucun stage n'est connu du service. \nN'oubliez pas de faire vos demandes sur l'intranet.</p>";
 }
 
 
