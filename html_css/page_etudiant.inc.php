@@ -17,7 +17,6 @@ echo "<h2> Page étudiante - ".$row['nom']." ".$row['prenom']." </h2>";
 
 //Menu pour les étudiants
 echo "<ul id='menu'>";
-echo "<a href='?page=accueil&id=".$id_login."&section=rendus' class='bouton_rendu' >Rendus</a>";
 echo "</ul>";
 
 //Partie sur les polypoints
