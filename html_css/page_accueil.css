@@ -28,6 +28,12 @@ ul {
     unicode-bidi: isolate;
 }
 
+.btn_menu:hover,.btn_menu:focus{
+    box-shadow: 0 0.5em 0.5em -0.5em #112074;
+    transform: translateY(-0.15em);
+}
+
+
 .btn_menu {
     background-color: #112074;
     border: none;
