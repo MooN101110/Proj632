@@ -31,7 +31,7 @@
     margin: 1px;
 }
 
-#polypoints, #stages tr:nth-child(even) {
+#polypoints tr:nth-child(even), #stages tr:nth-child(even) {
     background-color: aliceblue;
 }
 
