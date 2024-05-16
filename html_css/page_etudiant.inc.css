@@ -1,0 +1,41 @@
+.bouton_rendu{
+    text-decoration: none;
+    background-color: #112074;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 1em;
+    transition: background-color 0.3s;
+}
+
+#polypoint_par_annee{
+    color:#632c12;
+}
+
+#polypoints, #stages{
+    width:100%;
+    border-collapse: collapse;
+}
+
+#entete_polypoints, #entete_stages{
+    background-color: rgb(182, 213, 240);
+    text-align: left;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 1px;
+}
+
+#polypoints tr:nth-child(even), #stages tr:nth-child(even) {
+    background-color: aliceblue;
+}
+
+#pas_donnee{
+    color:#a12615;
+    font-size: large;
+}
