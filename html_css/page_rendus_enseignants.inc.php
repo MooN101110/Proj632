@@ -1,38 +1,81 @@
 
+
 <?php
-    $ajoute=false;
-    /* Afficher la liste des rendus qu'un élèves a à faire*/
-    echo "<h2>Liste des rendus qu'un élèves a à faire </h2> ";
-
-    if (isset($_POST['checkbox']) && is_array($_POST['checkbox'])) {
-        foreach ($_POST['checkbox'] as $selectedCheckbox) {
-            $case=$selectedCheckbox;
-            echo "La case ".$case;
-            $sql="UPDATE INFO_rendus_eleves SET etat='ON' WHERE id_rendu =". $case . ";";
-            $result=mysqli_query($conn, $sql) ; // on envoie la requête dans la base de donnée
-            if($result){
-                echo "Le travail a bien été rendu";
-            }
-        }   
-    }
-
-    echo "<h1> Etudiants </h1>";
-    
-    /* Permettre a un élève de valider le dépôt d'un rendu */
-    $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON module LIKE m.code_module WHERE etat='OFF' ORDER BY date ASC";
+//if($_SESSION["enseignant"]){
+$ajout=false;
+echo "<h1> Enseignants </h1>";
+    /* Afficher la liste des rendus qu'un enseignant a rentré */
+    echo "<h2>Liste des rendus qu'un enseignant à rentré </h2> ";
+    $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON module LIKE m.code_module ORDER BY date ASC";
     $result=mysqli_query($conn, $sql) or die ("Problème lors de la connexion");
-    echo $sql;
-    echo "<form method='post'> ";
-    $i=0;
-    while ($row=mysqli_fetch_array($result)) {
-        echo "<input type='checkbox' name='checkbox[]' value=".$i." class='rendu'>
-        <label for='choix".$i."'>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ."</label><br>";
-        $i+=1;
-        $module=$row['nom'];
-    }
-    echo "<button type='submit'>Valider les éléments finis</button>";
-    echo "</form>";
 
-    /* Afficher la liste des élèves qui ont rendus un rendus spécifiques*/
-    
-    ?>
+    echo "<div id='listerenduseleves'><ul> ";
+    while ($row=mysqli_fetch_array($result)) {
+        echo"<li>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ." ";
+    }
+    echo "</ul></div>";
+        /* Permettre à un enseignants de rajouter un rendus*/
+        echo "<h2>Rentrer un nouveau rendu </h2>";
+
+        echo "<form action='?page=rendus_enseignants' method='post'>";
+        echo "<label>Sélectionner un module</label><br>";
+        echo "<select name='nom'>";
+        //On ne sélectionne que les actionneurs qui ne sont pas affectés au moins une fois à une zone géographique
+        $sql="SELECT nom FROM INFO_module";
+        $result=mysqli_query($conn, $sql) or die("Problème lors de la connexion"); // on envoie la requête dans la base de donnée
+        while ($row=mysqli_fetch_array($result)) {
+            echo "<option value'". $row["nom"]."'>".$row["nom"]. "</option>";
+        }  
+
+        echo "</select>";
+        echo "<br>Description : <input type='text' name='description' value='OFF'></br>";
+        echo "<input type='date' name='date_saisie' value='OFF'>";
+        echo "<button type='submit'>Valider</button>";
+        echo "</form>";
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // On récupère les données du formulaire pour les ajouter à la base de donnée
+            $nom=$_POST["nom"];
+            $description=$_POST["description"];
+            $date_saisie=$_POST["date_saisie"];
+            echo $nom." ; ".$description." ; ".$date_saisie;
+        
+            $sql="SELECT MAX(id_rendu) as max FROM `INFO_rendus`";
+            $result=mysqli_query($conn, $sql);
+            while ($row=mysqli_fetch_array($result)) {
+                $max=$row["max"]+1;
+            }
+            // Vérification que la description n'est pas 'OFF'
+            echo $description."<br>";
+            if ($description !== 'OFF') {
+                $sql="INSERT INTO INFO_rendus(id_rendu, module, date, description) VALUES ('".$max."','".$nom."', '".$date_saisie."', '".$description."');";
+                $result=mysqli_query($conn, $sql); // on envoie la requête dans la base de donnée
+                if($result){
+                    $ajout=true;
+                }
+            } else {
+                echo "La description ne peut pas être 'OFF'. Veuillez entrer une description valide.";
+            }
+        }
+
+        /* Afficher un message si l'élément a bien été rajouté */
+        if ($ajout) {
+            // On vérifie qu'il y a bien un élément ajouté
+            if (mysqli_affected_rows($conn) > 0) {
+                // L'élément a été ajouté avec succès à la liste
+                echo "L'élément a été ajouté avec succès à la liste.";
+            } else {
+                // Aucune ligne n'a été insérée dans la base de données
+                echo "Erreur : Aucune ligne n'a été insérée dans la base de données.";
+            }
+        } else {
+            // Erreur lors de l'ajout de l'élément
+            //On stocke dans $errorCode le type d'erreur qui a été soulevé
+            $errorCode = mysqli_errno($conn);
+            // On affiche l'erreur en question, du moins le message qu'elle retourne
+            echo "Erreur lors de l'ajout de l'élément : " . mysqli_error($conn);
+
+        }
+
+        /*Afficher la liste des rendus pour une promo => seulement dans le mode enseignant */
+?>
