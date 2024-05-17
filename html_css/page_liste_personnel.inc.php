@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="page_liste_personnel.inc.css"/>
+<link rel="stylesheet" href="css/page_liste_personnel.inc.css"/>
 
 <?php
 

@@ -1,5 +1,3 @@
-
-
 <?php
 //if($_SESSION["enseignant"]){
 $ajout=false;
@@ -7,11 +5,11 @@ echo "<h1> Enseignants </h1>";
     /* Afficher la liste des rendus qu'un enseignant a rentré */
     echo "<h2>Liste des rendus qu'un enseignant à rentré </h2> ";
     $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON module LIKE m.code_module ORDER BY date ASC";
-    $result=mysqli_query($conn, $sql) or die ("Problème lors de la connexion");
+    $result=mysqli_query($conn, $sql);
 
     echo "<div id='listerenduseleves'><ul> ";
     while ($row=mysqli_fetch_array($result)) {
-        echo"<li>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ." ";
+        echo"<li>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ." </li>";
     }
     echo "</ul></div>";
         /* Permettre à un enseignants de rajouter un rendus*/
@@ -22,7 +20,7 @@ echo "<h1> Enseignants </h1>";
         echo "<select name='nom'>";
         //On ne sélectionne que les actionneurs qui ne sont pas affectés au moins une fois à une zone géographique
         $sql="SELECT nom FROM INFO_module";
-        $result=mysqli_query($conn, $sql) or die("Problème lors de la connexion"); // on envoie la requête dans la base de donnée
+        $result=mysqli_query($conn, $sql); // on envoie la requête dans la base de donnée
         while ($row=mysqli_fetch_array($result)) {
             echo "<option value'". $row["nom"]."'>".$row["nom"]. "</option>";
         }  

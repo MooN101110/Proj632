@@ -10,6 +10,17 @@
             else{
                 $_SESSION["connecte"]=true;
                 $_SESSION["identifiant"]=$_POST["id"];
+                //vérification si personne prof ou etu
+                $sql1="SELECT id_etudiant FROM INFO_etudiant WHERE nom LIKE (SELECT nom FROM INFO_utilisateur WHERE identifiant LIKE '".$_POST["id"]."') and prenom LIKE (SELECT prenom FROM INFO_utilisateur WHERE identifiant LIKE '".$_POST["id"]."')";
+                $result1 = mysqli_query($conn, $sql1) or die("Requête invalide: ". mysqli_error( $conn )."\n".$sql1);
+                $val= mysqli_fetch_array($result1);
+                if ($val["id_etudiant"]){
+                    $_SESSION["type"]="etudiant";
+                }
+                else{
+                    $_SESSION["type"]="enseignant";
+                }
+            
                 echo "<script>alert('Changement de mot de passe réussi ! :)')</script>";
                 echo "<script>window.location.href='?page=accueil'</script>";
             }

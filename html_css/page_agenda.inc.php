@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="page_agenda.inc.css"/>
+<link rel="stylesheet" href="css/page_agenda.inc.css"/>
 
 <div id="agenda">
 <?php

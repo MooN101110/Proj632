@@ -7,6 +7,7 @@ if (!isset($_SESSION)){
     if (!isset($_SESSION["connecte"])){
         $_SESSION["connecte"] = false;
         $_SESSION["identifiant"] = "";
+        $_SESSION["type"]=""; //etudiant ou enseignant
     }
 }
 ?>
@@ -18,7 +19,7 @@ if (!isset($_SESSION)){
     <title>Learnagement</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="learnagment.css">
+    <link rel="stylesheet" type="text/css" href="css/learnagment.css">
 </head>
 
 <?php 

@@ -21,18 +21,17 @@
     
     /* Permettre a un élève de valider le dépôt d'un rendu */
     $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON module LIKE m.code_module WHERE etat='OFF' ORDER BY date ASC";
-    $result=mysqli_query($conn, $sql) or die ("Problème lors de la connexion");
-    echo $sql;
+    $result=mysqli_query($conn, $sql) ;
+    
     echo "<form method='post'> ";
     $i=0;
     while ($row=mysqli_fetch_array($result)) {
-        echo "<input type='checkbox' name='checkbox[]' value=".$i." class='rendu'>
-        <label for='choix".$i."'>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ."</label><br>";
+        echo "<input type='checkbox' name='checkbox[]' value=".$i." class='rendu'>";
+        echo "<label for='choix".$i."'>".$row['nom']. " : ". $row['description']. ". Deadline : ".$row['date'] ."</label><br>";
         $i+=1;
         $module=$row['nom'];
     }
     echo "<button type='submit'>Valider les éléments finis</button>";
-    echo "</form>";
 
     /* Afficher la liste des élèves qui ont rendus un rendus spécifiques*/
     

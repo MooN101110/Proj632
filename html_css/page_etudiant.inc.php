@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="page_etudiant.inc.css"/>
+<link rel="stylesheet" href="css/page_etudiant.inc.css"/>
 
 <?php
 // id_login est récupéré dans l'url 
