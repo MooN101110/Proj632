@@ -1,0 +1,22 @@
+<?php
+    if (isset($_POST["mdp1"]) && isset($_POST["mdp2"])){
+        if ($_POST["mdp1"] == $_POST["mdp2"]){
+            $sql = "UPDATE INFO_utilisateur SET mot_de_passe = '".password_hash($_POST["mdp1"], PASSWORD_DEFAULT)."', mdp_change = '1' WHERE INFO_utilisateur.identifiant = '".$_POST['id']."'";
+            $result = mysqli_query($conn, $sql);
+            if (!$result){
+                echo "<script>alert('Erreur liée à la base de données... :c')</script>";
+                echo "<script>window.location.href='?page=connexion'</script>";
+            }
+            else{
+                $_SESSION["connecte"]=true;
+                $_SESSION["identifiant"]=$_POST["id"];
+                echo "<script>alert('Changement de mot de passe réussi ! :)')</script>";
+                echo "<script>window.location.href='?page=accueil'</script>";
+            }
+        }
+    }
+    else{
+        echo "<script>alert('Les mots de passe ne sont pas identiques ! :c')</script>";
+        echo "<script>window.location.href='?page=connexion'</script>";
+    }
+?>

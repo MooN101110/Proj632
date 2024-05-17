@@ -1,3 +1,16 @@
+<?php
+if (!isset($_SESSION)){
+    session_start([
+        'cookie_lifetime' => 86400,
+    ]);
+
+    if (!isset($_SESSION["connecte"])){
+        $_SESSION["connecte"] = false;
+        $_SESSION["identifiant"] = "";
+    }
+}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -21,14 +34,6 @@
 
 <body>
     <div id="contenu">
-    <?php
-    if(!isset($_GET["page"]) ) { 
-        $page="connexion";
-    } else {
-        $page=$_GET["page"];
-    }
-    ?>
-    <div id="contenue">
             <?php
             if(!isset($_GET["page"]) ) { 
                 $page="connexion";
@@ -47,6 +52,15 @@
     </div>
     <div id="piedpage">
 
-            <footer> Polytech Annecy-Chambéry - APP - Learnagement</footer>
+        <footer> 
+        <?php
+        if($_SESSION["connecte"]){
+            echo "Connecté en tant que : ".$_SESSION["identifiant"]." - ";
+        }
+        else {
+            echo "Non connecté - ";
+        }
+        ?>
+        Polytech Annecy-Chambéry - APP - Learnagement</footer>
         </div>
 </body>
