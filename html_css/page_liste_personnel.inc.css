@@ -1,0 +1,53 @@
+.bouton_retour{
+    background-color: #112074;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 1em;
+    transition: background-color 0.3s;
+}
+#erreur_recherche{
+    color: #ff0000;
+}
+
+#enseignants, #etudiants{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+/* pour page_liste_prof */
+#enseignant, #etudiant {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    height : 40px;
+    max-width: max-content;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 1px;
+}
+
+#info_prof{
+    text-decoration: none;
+    color:black;
+}
+
+#mail_prof{
+    text-decoration: none;
+    font-size: small;
+}
+
+/* pour page_liste_etu */
+#annee_filiere{
+    font-size: small;
+    color:#112074
+}

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="page_liste_personnel.inc.css"/>
+
 <?php
 // Affichage des élèves
 echo "<p> Liste des élèves : </p>";
@@ -23,7 +25,7 @@ echo "<select name='annee' id='form'>";
     }
 echo "</select>";
 echo "<input type='hidden' name='valider' value='true'>"; // Ajout de la variable cachée pour indiquer que le formulaire a été soumis
-echo "<button id=bouton type='valider'>Valider</button>";
+echo "<button class='bouton_retour' type='valider'>Valider</button>";
 echo "<a href='?page=liste_personnel' class='bouton_retour'>Retour</a>";
 echo "</form>";
 
@@ -38,9 +40,11 @@ if (isset($_POST['valider'])) {
         echo "<p>Elèves en ".$annee." : </p> ";
         $sql="SELECT prenom as etu_prenom, nom as etu_nom, filiere as etu_filiere FROM INFO_etudiant WHERE annee='{$annee}'";
         $result=mysqli_query($conn, $sql);
+        echo "<div id='etudiants'>";
         while ($row=mysqli_fetch_array($result)){ 
-            echo "<div>".$row['etu_nom']." ".$row['etu_prenom']." ".$row['etu_filiere']." </div>"; 
+            echo "<div id='etudiant'> <div id='nom_prenom'> ".$row['etu_nom']." ".$row['etu_prenom']."</div> <div id='annee_filiere'> ".$row['etu_filiere']." </div> </div>"; 
             }
+        echo "</div>";
         
     }
 
@@ -50,9 +54,11 @@ if (isset($_POST['valider'])) {
         echo "<p>Elèves de ".$filiere." : </p>";
         $sql="SELECT prenom as etu_prenom, nom as etu_nom, annee as etu_annee FROM INFO_etudiant WHERE filiere='{$filiere}'";
         $result=mysqli_query($conn, $sql);
+        echo "<div id='etudiants'>";
         while ($row=mysqli_fetch_array($result)){ 
-            echo "<div>".$row['etu_nom']." ".$row['etu_prenom']." ".$row['etu_annee']." </div>"; 
+            echo "<div id='etudiant'> <div id='nom_prenom'> ".$row['etu_nom']." ".$row['etu_prenom']."</div> <div id='annee_filiere'> ".$row['etu_annee']." </div> </div>"; 
             }
+        echo "</div>";
         
     }
 
@@ -61,12 +67,14 @@ if (isset($_POST['valider'])) {
         $result=mysqli_query($conn, $sql);
         if (mysqli_num_rows($result)>0) {
             echo "<p>Elèves de ".$filiere." en ".$annee." : </p>";
+            echo "<div id='etudiants'>";
             while ($row=mysqli_fetch_array($result)){ 
-                echo "<div>".$row['etu_nom']." ".$row['etu_prenom']."</div>"; 
+                echo "<div id='etudiant'>".$row['etu_nom']." ".$row['etu_prenom']."</div>"; 
                 }
+            echo "</div>";
             }
         else{
-            echo "<p>Il n'y a pas d'étudiants correspondant à la recherche : ".$filiere." en ".$annee.".</p>";
+            echo "<p id='erreur_recherche'>Il n'y a pas d'étudiants correspondant à la recherche : ".$filiere." en ".$annee.".</p>";
         }
     }
         
@@ -77,9 +85,11 @@ if (isset($_POST['valider'])) {
 else {
     $sql="SELECT prenom as etu_prenom, nom as etu_nom, annee as etu_annee, filiere as etu_filiere FROM INFO_etudiant";
     $result=mysqli_query($conn, $sql);
+    echo "<div id='etudiants'>";
     while ($row = mysqli_fetch_array($result)){ 
-        echo "<div>".$row['etu_nom']." ".$row['etu_prenom']." " .$row['etu_annee']." " .$row['etu_filiere']."</div>"; 
+        echo "<div id='etudiant'> <div id='nom_prenom'> ".$row['etu_nom']." ".$row['etu_prenom']."</div> <div id='annee_filiere'> " .$row['etu_annee']." " .$row['etu_filiere']."</div> </div>"; 
     }
+    echo "</div>";
 } 
 
 ?>

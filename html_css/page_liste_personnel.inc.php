@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="page_liste_personnel.inc.css"/>
+
 <?php
 
 //Formulaire pour choisir la liste à afficher
@@ -8,7 +10,7 @@ echo "<form method='post' action='?page=liste_personnel'>";
     echo "<option value=liste_etu> Etudiants </option>"; 
     echo "</select>";
     echo "<input type='hidden' name='submit' value='true'>"; // Ajout de la variable cachée pour indiquer que le formulaire a été soumis
-    echo "<button id=bouton type='submit'>Valider</button><br/>";
+    echo "<button class='bouton_retour' type='submit'>Valider</button><br/>";
 echo "</form>";
 
 
