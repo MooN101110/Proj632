@@ -1,10 +1,7 @@
 
-<style>
-<?php include 'page_agenda.inc.css';
- ?>
-</style>
+<link rel="stylesheet" href="page_agenda.inc.css"/>
 
-
+<div id="agenda">
 <?php
 // Définir la date actuelle
 $date = date('Y-m-d');
@@ -54,3 +51,4 @@ echo '</table>';
 <script type="text/javascript">
     <?php include 'page_agenda.inc.js'; ?>
 </script>
+</div>

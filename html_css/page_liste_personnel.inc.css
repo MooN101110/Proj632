@@ -20,7 +20,12 @@
     display:flex;
     flex-direction: row;
     flex-wrap:wrap;
+    justify-content: space-around;
+    overflow-y: scroll;
+    height: 70vh;
 }
+
+
 
 /* pour page_liste_prof */
 #enseignant, #etudiant {
@@ -28,7 +33,7 @@
     flex-direction: column;
     flex-wrap:wrap;
     height : 40px;
-    max-width: max-content;
+    width: 200vw;
     align-items: center;
     background-color: aliceblue;
     border-radius: 10px;
@@ -50,4 +55,10 @@
 #annee_filiere{
     font-size: small;
     color:#112074
+}
+
+
+
+&::-webkit-scrollbar {
+    width: 0;
 }
