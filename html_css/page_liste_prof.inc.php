@@ -4,10 +4,10 @@
 // Affichage des professeurs
 echo "<p> Liste des professeurs : </p>";
 //Affichage de la barre de recherche
-echo "<form method='post' action='?page=liste_prof'>";
+echo "<form method='post' action='?page=accueil&section=liste_prof'>";
 echo "<input type='text' name='query' placeholder='Entrez une recherche'>";
 echo "<input class='bouton_retour' type='submit' name=bouton_recherche value='Rechercher'>";
-echo "<a href='?page=liste_personnel' class='bouton_retour'>Retour</a>";
+echo "<a href='?page=accueil&section=liste_personnel' class='bouton_retour'>Retour</a>";
 echo "</form>";
 
 
@@ -20,7 +20,7 @@ if (isset($_POST['bouton_recherche'])){
     if (mysqli_num_rows($result)>0) {
         echo "<div id='enseignants'>";
         while ($row = mysqli_fetch_array($result)){ 
-            echo "<div id='enseignant'> <a id='info_prof' href='?page=info_enseignant&id=".$row['prof_id']."'>".$row['prof_nom']." ".$row['prof_prenom']."</a> <a id='mail_prof' href='mailto:".$row['prof_mail']."'>".$row['prof_mail']."</a></div>";
+            echo "<div id='enseignant'> <a id='info_prof' href='?page=accueil&section=info_enseignant&id=".$row['prof_id']."'>".$row['prof_nom']." ".$row['prof_prenom']."</a> <a id='mail_prof' href='mailto:".$row['prof_mail']."'>".$row['prof_mail']."</a></div>";
             }
         echo "</div>";
     }
@@ -35,7 +35,7 @@ else{
     $result=mysqli_query($conn, $sql);
     echo "<div id='enseignants'>";
     while ($row = mysqli_fetch_array($result)){ 
-        echo "<div id='enseignant'> <a id='info_prof' href='?page=info_enseignant&id=".$row['prof_id']."'>".$row['prof_nom']." ".$row['prof_prenom']."</a> <a id='mail_prof' href='mailto:".$row['prof_mail']."'>".$row['prof_mail']."</a></div>";
+        echo "<div id='enseignant'> <a id='info_prof' href='?page=accueil&section=info_enseignant&id=".$row['prof_id']."'>".$row['prof_nom']." ".$row['prof_prenom']."</a> <a id='mail_prof' href='mailto:".$row['prof_mail']."'>".$row['prof_mail']."</a></div>";
         }
     echo "</div>";
     }
