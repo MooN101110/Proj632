@@ -10,3 +10,12 @@ td {
     box-sizing: border-box;
     vertical-align: top;
 }
+
+#agenda {
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+&::-webkit-scrollbar {
+    width: 0;
+}

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="page_liste_personnel.inc.css"/>
+<link rel="stylesheet" href="css/page_liste_personnel.inc.css"/>
 
 <?php
 // Affichage des élèves
@@ -26,7 +26,7 @@ echo "<select name='annee' id='form'>";
 echo "</select>";
 echo "<input type='hidden' name='valider' value='true'>"; // Ajout de la variable cachée pour indiquer que le formulaire a été soumis
 echo "<button class='bouton_retour' type='valider'>Valider</button>";
-echo "<a href='?page=liste_personnel' class='bouton_retour'>Retour</a>";
+echo "<a href='?page=accueil&section=liste_personnel' class='bouton_retour'>Retour</a>";
 echo "</form>";
 
 // Affichage de la liste
