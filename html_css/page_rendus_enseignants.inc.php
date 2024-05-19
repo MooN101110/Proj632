@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="css/page_rendus.inc.css"/>
+
+
 <?php
 //if($_SESSION["enseignant"]){
 $ajout=false;
@@ -28,7 +31,7 @@ echo "<h1> Enseignants </h1>";
         echo "</select>";
         echo "<br>Description : <input type='text' name='description' value='OFF'></br>";
         echo "<input type='date' name='date_saisie' value='OFF'>";
-        echo "<button type='submit'>Valider</button>";
+        echo "<button class='bouton' type='submit'>Valider</button>";
         echo "</form>";
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

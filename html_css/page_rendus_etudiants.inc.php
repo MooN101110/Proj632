@@ -1,5 +1,9 @@
+<link rel="stylesheet" href="css/page_rendus.inc.css"/>
 
 <?php
+
+    echo "<h1> Etudiants </h1>";
+    
 //if($_SESSION["etudiant"]){
     $ajoute=false;
     /* Afficher la liste des rendus qu'un élèves a à faire*/
@@ -17,8 +21,6 @@
         }   
     }
 
-    echo "<h1> Etudiants </h1>";
-    
     /* Permettre a un élève de valider le dépôt d'un rendu */
     $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON matiere LIKE m.code_module WHERE etat='OFF' ORDER BY date ASC";
     $result=mysqli_query($conn, $sql) or die ("Problème lors de la connexion");
@@ -31,7 +33,7 @@
         $i+=1;
         $module=$row['nom'];
     }
-    echo "<button type='submit'>Valider les éléments finis</button>";
+    echo "<button class='bouton' type='submit'>Valider les éléments finis</button>";
     echo "</form>";
 
     /* Afficher la liste des élèves qui ont rendus un rendus spécifiques*/
