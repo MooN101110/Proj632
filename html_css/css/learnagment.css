@@ -1,0 +1,16 @@
+#contenu{
+    display: grid;
+    height: 100vh;
+    
+
+}
+
+#piedpage {
+    height: 60px;
+    margin: 20px 0;
+    background-color: #f7f7f7;
+    color: #666;
+    border-top: 1px solid #112074;
+    text-align: center;
+    line-height: 60px;
+}

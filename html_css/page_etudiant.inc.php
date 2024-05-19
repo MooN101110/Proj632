@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="page_etudiant.inc.css"/>
+<link rel="stylesheet" href="css/page_etudiant.inc.css"/>
 
 <?php
 // id_login est récupéré dans l'url 
-$id_login=$_GET["id"];
+$id_login=$_SESSION["identifiant"];
 
 /* Lancement du fichier de scraping des informations de l'étudiant */
 /*$pythonScript='../python/scraping_polypoint_stage.py';

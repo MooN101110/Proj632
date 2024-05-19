@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="page_liste_personnel.inc.css"/>
+<link rel="stylesheet" href="css/page_liste_personnel.inc.css"/>
 
 <?php
 
 //Formulaire pour choisir la liste à afficher
-echo "<form method='post' action='?page=liste_personnel'>";
+echo "<form method='post' action='?page=accueil&section=liste_personnel'>";
     echo "<label id='formulaire' for='choix'>Selectionnez la liste à afficher : </label>";
     echo "<select name='liste' id='form'>";
     echo "<option value=liste_prof> Enseignants </option>"; 

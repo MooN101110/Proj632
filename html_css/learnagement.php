@@ -1,3 +1,17 @@
+<?php
+if (!isset($_SESSION)){
+    session_start([
+        'cookie_lifetime' => 86400,
+    ]);
+
+    if (!isset($_SESSION["connecte"])){
+        $_SESSION["connecte"] = false;
+        $_SESSION["identifiant"] = "";
+        $_SESSION["type"]=""; //etudiant ou enseignant
+    }
+}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -5,7 +19,7 @@
     <title>Learnagement</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="learnagment.css">
+    <link rel="stylesheet" type="text/css" href="css/learnagment.css">
 </head>
 
 <?php 
@@ -21,14 +35,6 @@
 
 <body>
     <div id="contenu">
-    <?php
-    if(!isset($_GET["page"]) ) { 
-        $page="connexion";
-    } else {
-        $page=$_GET["page"];
-    }
-    ?>
-    <div id="contenue">
             <?php
             if(!isset($_GET["page"]) ) { 
                 $page="connexion";
@@ -47,6 +53,15 @@
     </div>
     <div id="piedpage">
 
-            <footer> Polytech Annecy-Chambéry - APP - Learnagement</footer>
+        <footer> 
+        <?php
+        if($_SESSION["connecte"]){
+            echo "Connecté en tant que : ".$_SESSION["identifiant"]." - ";
+        }
+        else {
+            echo "Non connecté - ";
+        }
+        ?>
+        Polytech Annecy-Chambéry - APP - Learnagement</footer>
         </div>
 </body>

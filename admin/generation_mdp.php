@@ -67,11 +67,10 @@
             $sql = "SELECT nom,prenom from INFO_etudiant UNION SELECT nom,prenom from INFO_enseignant";
             $resultat = mysqli_query($conn, $sql) or die("Requête invalide: ". mysqli_error( $conn )."\n".$sql);
 
-            $i=0;
-            while(($ligne = mysqli_fetch_array($resultat)) && ($i<300)){
+            while(($ligne = mysqli_fetch_array($resultat))){
                 $sql = "INSERT INTO INFO_utilisateur(nom,prenom,identifiant,mot_de_passe,mdp_change) VALUES ('".$ligne['nom']."','".$ligne['prenom']."','".identifiant($ligne['nom'],$ligne['prenom'])."','".password_hash(motDePasse(), PASSWORD_DEFAULT)."',0)";
                 $resultat1 = mysqli_query($conn, $sql) or die("Requête invalide: ". mysqli_error( $conn )."\n".$sql);
-                $i++;
+
             }
 
         }
