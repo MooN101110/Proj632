@@ -6,8 +6,8 @@
 $ajout=false;
 echo "<h1> Enseignants </h1>";
     /* Afficher la liste des rendus qu'un enseignant a rentré */
-    echo "<h2>Liste des rendus qu'un enseignant à rentré </h2> ";
-    $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON matiere LIKE m.code_module ORDER BY date ASC";
+    echo "<h2>Liste des rendus que les élèves ont </h2> ";
+    $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON module LIKE m.code_module ORDER BY date ASC";
     $result=mysqli_query($conn, $sql) or die ("Problème lors de la connexion");
 
     echo "<div id='listerenduseleves'><ul> ";
