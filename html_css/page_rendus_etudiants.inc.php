@@ -22,7 +22,7 @@
     }
 
     /* Permettre a un élève de valider le dépôt d'un rendu */
-    $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON matiere LIKE m.code_module WHERE etat='OFF' ORDER BY date ASC";
+    $sql="SELECT m.nom AS nom, date,description FROM `INFO_rendus_eleves` JOIN INFO_module m ON module LIKE m.code_module WHERE etat='OFF' ORDER BY date ASC";
     $result=mysqli_query($conn, $sql) or die ("Problème lors de la connexion");
 
     echo "<form method='post'> ";
