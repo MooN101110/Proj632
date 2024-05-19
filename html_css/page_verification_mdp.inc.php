@@ -15,7 +15,7 @@ if( isset( $_POST["inscription_ok"])){
       $sql1="SELECT id_etudiant FROM INFO_etudiant WHERE nom LIKE (SELECT nom FROM INFO_utilisateur WHERE identifiant LIKE '".$_POST["id"]."') and prenom LIKE (SELECT prenom FROM INFO_utilisateur WHERE identifiant LIKE '".$_POST["id"]."')";
       $result1 = mysqli_query($conn, $sql1) or die("Requête invalide: ". mysqli_error( $conn )."\n".$sql1);
       $val= mysqli_fetch_array($result1);
-      if ($val["id_etudiant"]){
+      if ($val){
         $_SESSION["type"]="etudiant";
       }
       else{
