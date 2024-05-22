@@ -23,6 +23,7 @@
     justify-content: space-around;
     overflow-y: scroll;
     height: 70vh;
+    align-content: flex-start;
 }
 
 
