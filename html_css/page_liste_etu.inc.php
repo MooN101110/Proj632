@@ -4,7 +4,7 @@
 // Affichage des élèves
 echo "<p> Liste des élèves : </p>";
 //Affichage de la barre de tri
-echo "<form method='post' action='?page=liste_etu'>";
+echo "<form method='post' action='?page=accueil&section=liste_etu'>";
 echo "<label id='formulaire' for='choix'>Sélectionnez la filière et/ou l'année à afficher : </label>";
 // selection de la filiere
 echo "<select name='filiere' id='form'>";
